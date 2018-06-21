@@ -10,7 +10,7 @@ import VueResource from 'vue-resource'
 import 'font-awesome/css/font-awesome.css'
 
 // 此处引入静态资源
-require('./assets/css/style.css')
+require('../static/css/style.css')
 Vue.use(ElementUI)
 Vue.use(ElementUI, { locale })
 Vue.config.productionTip = false

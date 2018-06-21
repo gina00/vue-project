@@ -1,0 +1,46 @@
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #eee;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #d4d4d4;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #999;
+}
+
+.el-input__inner{
+    height: 30px;
+    border-radius: 0px;
+}
+.el-tabs--card>.el-tabs__header {
+    background: #00253e !important;
+}
+.el-tabs__item{
+    color: #666;
+    background: #d7d7d7;
+    margin-right: 5px;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__nav{
+    border-radius: 0px;
+    border: none;
+    margin-left: 10px;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active.is-closable {
+    background: #f2f2f2;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+    border-bottom-color: transparent;
+}
+.el-tabs__new-tab{
+    margin-right: 10px;
+}
+.el-tabs__header{
+    margin: 0px;
+  }
+  .el-tabs__content {
+    overflow: inherit;
+  }

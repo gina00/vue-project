@@ -1,0 +1,55 @@
+{
+    "list": [
+        {
+            "operate": "产品受理"
+        },
+        {
+            "operate": "营销受理"
+        },
+        {
+            "operate": "普通入网"
+        },
+        {
+            "operate": "开打登记"
+        },
+        {
+            "operate": "档案补正"
+        },
+        {
+            "operate": "业务密码重置"
+        },
+        {
+            "operate": "补换卡"
+        },
+        {
+            "operate": "申请销户"
+        },
+        {
+            "operate": "融合产品订购"
+        },
+        {
+            "operate": "宽带业务开通"
+        },
+        {
+            "operate": "宽带业务变更"
+        },
+        {
+            "operate": "消费信息查询打印"
+        },
+        {
+            "operate": "现金缴费"
+        },
+        {
+            "operate": "报停复机"
+        },
+        {
+            "operate": "营业结账"
+        }
+    ],
+    "hot": [
+        {
+            "iconUrl": "",
+            "operateName": "档案补正"
+        }
+    ]
+}
