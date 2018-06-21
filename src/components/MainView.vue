@@ -33,11 +33,11 @@ export default {
   },
   data () {
     return {
-      editableTabsValue: '1',
+      editableTabsValue: '首页',
       editableTabs: [
         {
-          title: 'Tab 1',
-          name: '1',
+          title: '首页',
+          name: '首页',
           content: 'homePage'
         },
         {
