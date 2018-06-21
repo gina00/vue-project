@@ -1,28 +1,33 @@
 <template>
 <div>
     <div class="common-box">
-        <header>
+        <header >
             <i class="left-icon"></i>
-            <span class="title-text">常用功能</span>
+            <span class="title-text">{{commonUse}}</span>
         </header>
         <section>
             <ul class="list-item">
-                <li v-for="item in list" :key="item.name">
+              <template v-for="root in list">
+                <li v-for="item in root.operateList" :key="item.name">
                     {{item.operate}}
                 </li>
+              </template>
             </ul>
         </section>
     </div>
     <div class="common-box">
         <header>
             <i class="left-icon"></i>
-            <span class="title-text" v-bind="hotBusiness.title">{{hotBusiness.title}}</span>
+            <span class="title-text">{{hotBusiness}}</span>
         </header>
         <section>
             <ul class="list-item">
-                <li v-for="item in hotBusiness" :key="item.name">
-                    {{item.oprate}}
+              <template v-for="hot in list" >
+                <li class="img-list" v-for="item in hot.hot" :key="item.name">
+                   <img :src="item.iconUrl">
+                   <span>{{item.operateName}}</span>
                 </li>
+              </template>
             </ul>
         </section>
     </div>
@@ -30,75 +35,32 @@
 </template>
 
 <script>
+import list from "../data/hotBusiness.json";
 export default {
   props: {
-    hotBusiness: {
+    hot: {
       type: Array,
-      default () {
+      default() {
         return [
-          { oprate: 'sda' },
-          { oprate: 'sda' },
-          { oprate: 'sda' },
-          { oprate: 'sda' }
-        ]
+          { oprate: "sda" },
+          { oprate: "sda" },
+          { oprate: "sda" },
+          { oprate: "sda" }
+        ];
       }
     }
   },
   propsData: {
-    msg: 'hello'
+    msg: "hello"
   },
-  data () {
+  data() {
     return {
-      list: [
-        {
-          operate: '产品受理'
-        },
-        {
-          operate: '营销受理'
-        },
-        {
-          operate: '普通入网'
-        },
-        {
-          operate: '开打登记'
-        },
-        {
-          operate: '档案补正'
-        },
-        {
-          operate: '业务密码重置'
-        },
-        {
-          operate: '补换卡'
-        },
-        {
-          operate: '申请销户'
-        },
-        {
-          operate: '融合产品订购'
-        },
-        {
-          operate: '宽带业务开通'
-        },
-        {
-          operate: '宽带业务变更'
-        },
-        {
-          operate: '消费信息查询打印'
-        },
-        {
-          operate: '现金缴费'
-        },
-        {
-          operate: '报停复机'
-        },
-        {
-          operate: '营业结账'
-        }
-      ]
-    }
+      list,
+      commonUse: "常用功能",
+      hotBusiness: "热门业务"
+    };
   }
-}
+};
 </script>
 
 <style scoped>
@@ -144,5 +106,13 @@ li {
   float: left;
   width: calc(100% / 5);
   margin: 10px 0;
+}
+.img-list:hover{
+  color:#019ae5;
+  border: 1px solid #0af;
+}
+.list-item li img{
+  width: 48px;
+  height: 48px;
 }
 </style>

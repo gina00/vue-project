@@ -7,16 +7,16 @@
 >
     <div class="logoBox">
         <span class="andLogo">
-            <img src="../assets/images/u69.png">
+            <img src="../../static/images/u12.png">
         </span>
         <span class="moveLogo">
-            <img src="../assets/images/u71.png">
+            <img src="../../static/images/u14.png">
         </span>
     </div>
     <el-dropdown trigger="click">
         <span class="el-dropdown-link">
           <img
-                src="../assets/images/u76.png"
+                src="../../static/images/u19.png"
                 class="menuIcon"
             >
             <i class="el-icon-arrow-down el-icon--right"></i>
