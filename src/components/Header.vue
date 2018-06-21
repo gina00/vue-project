@@ -5,7 +5,6 @@
     mode="horizontal"
     @select="handleSelect"
 >
-
     <div class="logoBox">
         <span class="andLogo">
             <img src="../assets/images/u69.png">
@@ -41,24 +40,24 @@
 </template>
 
 <script>
-import MenuList from "./MenuList.vue";
+import MenuList from './MenuList.vue'
 export default {
-  name: "Headers",
+  name: 'Headers',
   components: {
     MenuList
   },
-  data() {
+  data () {
     return {
-      activeIndex: "1",
-      activeIndex2: "1"
-    };
+      activeIndex: '1',
+      activeIndex2: '1'
+    }
   },
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+    handleSelect (key, keyPath) {
+      console.log(key, keyPath)
     }
   }
-};
+}
 </script>
 
 <style scoped>

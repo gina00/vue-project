@@ -1,45 +1,45 @@
 <template>
-<div class="aside-menu">
-    <ul class="aside-menu-ul">
+<div class='aside-menu'>
+    <ul class='aside-menu-ul'>
         <li>
-            <a class="fa fa-user-circle-o" aria-hidden="true" @click="toggle()"></a>
+            <a class='fa fa-user-circle-o' aria-hidden='true' @click='toggle()'></a>
         </li>
-        <li class="active">
-            <a class="fa fa-home" aria-hidden="true"></a>
-        </li>
-        <li>
-            <a class="fa fa-newspaper-o" aria-hidden="true"></a>
+        <li class='active'>
+            <a class='fa fa-home' aria-hidden='true'></a>
         </li>
         <li>
-            <a class="fa fa-id-card-o" aria-hidden="true"></a>
+            <a class='fa fa-newspaper-o' aria-hidden='true'></a>
         </li>
         <li>
-            <a class="fa fa-volume-up" aria-hidden="true"></a>
+            <a class='fa fa-id-card-o' aria-hidden='true'></a>
+        </li>
+        <li>
+            <a class='fa fa-volume-up' aria-hidden='true'></a>
         </li>
     </ul>
-    <div class="userinfo" v-show="isshow">
-        <div class="title">
+    <div class='userinfo' v-show='isshow'>
+        <div class='title'>
             <span>用户信息</span>
-            <i class="fa fa-arrow-circle-left" aria-hidden="true" @click="toggle()"></i>
+            <i class='fa fa-arrow-circle-left' aria-hidden='true' @click='toggle()'></i>
         </div>
-        <el-input v-model="input" placeholder="请输入内容"></el-input>
-        <div class="info-style">
-            <p class="info-title">基本信息</p>
+        <el-input v-model='input' placeholder='请输入内容'></el-input>
+        <div class='info-style'>
+            <p class='info-title'>基本信息</p>
             <p>
                 <span>手机号码：</span>
-                <span class="number">13500008888</span>
+                <span class='number'>13500008888</span>
             </p>
             <p>
                 <span>客户姓名：</span>
                 <span>王小明</span>
             </p>
             <p>
-                <span class="disable">客户类型：</span>
+                <span class='disable'>客户类型：</span>
                 <span></span>
             </p>
         </div>
-        <div class="info-style">
-            <p class="info-title">业务信息</p>
+        <div class='info-style'>
+            <p class='info-title'>业务信息</p>
             <p>
                 <span>品牌名称：</span>
                 <span>全球通</span>
@@ -48,9 +48,8 @@
                 <span>归属区域：</span>
                 <span>福建福州</span>
             </p>
-            
             <p>
-                <span class="disable">用户状态：</span>
+                <span class='disable'>用户状态：</span>
                 <span></span>
             </p>
             <p>
@@ -58,7 +57,7 @@
                 <span>2012-10-09</span>
             </p>
             <p>
-                <span class="disable">基本产品：</span>
+                <span class='disable'>基本产品：</span>
                 <span></span>
             </p>
             <p>
@@ -66,19 +65,18 @@
                 <span>5000</span>
             </p>
             <p>
-                <span class="disable">可用余额：</span>
+                <span class='disable'>可用余额：</span>
                 <span>70.32</span>
             </p>
             <p>
                 <span>欠费金额：</span>
                 <span>0.00</span>
             </p>
-            
         </div>
-        <div class="info-style">
-            <p class="info-title">其他信息</p>
+        <div class='info-style'>
+            <p class='info-title'>其他信息</p>
             <p>
-                <span class="disable">新档标志：</span>
+                <span class='disable'>新档标志：</span>
                 <span></span>
             </p>
             <p>
@@ -86,22 +84,21 @@
                 <span>是</span>
             </p>
             <p>
-                <span class="disable">核实标识：</span>
-                <span></span>
-            </p>            
-            <p>
-                <span class="disable">携号信息：</span>
+                <span class='disable'>核实标识：</span>
                 <span></span>
             </p>
             <p>
-                <span class="disable">信用等级：</span>
+                <span class='disable'>携号信息：</span>
                 <span></span>
             </p>
             <p>
-                <span class="disable">用户星级：</span>
+                <span class='disable'>信用等级：</span>
                 <span></span>
             </p>
-            
+            <p>
+                <span class='disable'>用户星级：</span>
+                <span></span>
+            </p>
         </div>
     </div>
 </div>
@@ -109,24 +106,24 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      input: "",
-      isshow:true
-    };
+      input: '',
+      isshow: true
+    }
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
     },
-    toggle(){
-         this.isshow = !this.isshow;
+    toggle (){
+      this.isshow = !this.isshow
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -217,4 +214,3 @@ p {
   color: #999;
 }
 </style>
-
