@@ -13,7 +13,6 @@
 }
 
 .el-input__inner{
-    height: 30px;
     border-radius: 0px;
 }
 .el-tabs--card>.el-tabs__header {
@@ -43,4 +42,10 @@
   }
   .el-tabs__content {
     overflow: inherit;
+  }
+  .el-input{
+    width: auto
+  }
+  .el-button{
+      border-radius: 0px;
   }
