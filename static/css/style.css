@@ -1,3 +1,8 @@
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 ::-webkit-scrollbar {
     width: 6px;
     background-color: #eee;
@@ -18,9 +23,14 @@
 .el-tabs--card>.el-tabs__header {
     background: #00253e !important;
 }
-.el-tabs__item{
+.el-tabs--card>.el-tabs__header .el-tabs__nav>.el-tabs__item{
     color: #666;
     background: #d7d7d7;
+    margin-right: 5px;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__nav>.el-tabs__item .el-tabs__header{
+    color: #666;
+    background: transparent;
     margin-right: 5px;
 }
 .el-tabs--card>.el-tabs__header .el-tabs__nav{

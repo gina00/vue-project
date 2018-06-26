@@ -12,19 +12,19 @@
         :name='item.name'
     >
     <home-page v-if='item.content=="homePage"' :height='item.name'></home-page>
-    <tab v-if='item.content=="tab"'></tab>
+    <total v-if='item.content=="total"'></total>
         </el-tab-pane>
         </el-tabs>
 </template>
 
 <script>
 import homePage from './HomeView.vue'
-import tab from './tab2.vue'
+import total from './TotalMenu.vue'
 export default {
   name: 'content-page',
   components: {
     'home-page': homePage,
-    'tab': tab
+    'total': total
   },
   props: {
     hotBusiness:{
@@ -41,9 +41,9 @@ export default {
           content: 'homePage'
         },
         {
-          title: 'Tab 2',
-          name: '2',
-          content: 'tab'
+          title: '综合信息',
+          name: '综合信息',
+          content: 'total'
         }
       ],
       tabIndex: 2
