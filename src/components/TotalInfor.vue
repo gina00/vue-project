@@ -59,7 +59,9 @@
         <el-col :span="24">
                 <el-tabs type="border-card">
                     <el-tab-pane :label="productInfor">{{productInfor}}</el-tab-pane>
-                    <el-tab-pane :label="marketingInfor">{{marketingInfor}}</el-tab-pane>
+                    <el-tab-pane :label="marketingInfor">
+                        <mkinfor-data></mkinfor-data>
+                    </el-tab-pane>
                 </el-tabs>
            
         </el-col>
@@ -69,14 +71,19 @@
 
 <script>
 import list from '../data/hotBusiness.json'
+import mkinforData from './table-components/marketInforTable.vue'
 export default {
+    components:{
+       'mkinfor-data' :mkinforData
+    },
     props: ['totalInfor'],
     data() {
         return {
             list,
             referralServices: '推荐业务',
             productInfor:'产品信息',
-            marketingInfor:'营销信息'
+            marketingInfor:'营销信息',
+            
         }
     }
 }
