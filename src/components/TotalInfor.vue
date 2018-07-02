@@ -8,14 +8,14 @@
                         <div class="payBox">
                             <a class='fa fa-usd iconBox balance'></a>
                             <div class="showtext">
-                                <p>我的余额(元)</p>
+                                <p>我的余额 ( 元 )</p>
                                 <p class="color-blue">70.32</p>
                             </div>
                         </div>
                         <div class="payBox">
                             <a class='fa fa-bolt iconBox arrearage'></a>
                             <div class="showtext">
-                                <p>我的欠费(元)</p>
+                                <p>我的欠费 ( 元 )</p>
                                 <p class="color-pink">0.00</p>
                             </div>
                         </div>
@@ -117,10 +117,10 @@ P {
 
 .iconBox {
     display: inline-block;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     text-align: center;
-    line-height: 70px;
+    line-height: 60px;
     border-radius: 50px;
     font-size: 30px;
     color: #fff;
@@ -139,7 +139,6 @@ P {
     padding-left: 20px;
     display: flex;
     flex-flow: row nowrap;
-    padding-bottom: 20px;
 }
 
 .showtext {
@@ -154,7 +153,7 @@ P {
 
 .color-blue,
 .color-pink {
-    font-size: 26px;
+    font-size: 28px;
 }
 
 .color-blue {
@@ -199,7 +198,7 @@ P {
     padding: 10px;
     background: #fff;
     margin-bottom: 0;
-    min-height: 247px;
+    min-height: 212px;
 }
 
 .left-icon {

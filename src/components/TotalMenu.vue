@@ -4,7 +4,7 @@
         <total-infor :total-infor="totalInfor"></total-infor>
     </el-tab-pane>
     <el-tab-pane :label="customerInfor" name="second" >
-      
+      <hover></hover>
     </el-tab-pane>
     <el-tab-pane :label="myOccur" name="third">{{myOccur}}</el-tab-pane>
     <el-tab-pane :label="productInfor" name="fourth">{{productInfor}}</el-tab-pane>
@@ -17,9 +17,11 @@
 
 <script>
 import totalData from './TotalInfor.vue'
+import hover from './definition-components/hover.vue'
 export default {
     components: {
         'total-infor': totalData,
+        'hover':hover
     },
     data() {
         return {
