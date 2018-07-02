@@ -7,8 +7,9 @@
         </li>
     </ul>
     <div class='childList'>
-        <template v-for='item in data' >
-                <ul class='parent-ul' :key='item.name' :class='{show:selected==index}'>
+        <template v-for='item in data' v-if="item.id==index" @click="show()">
+            <!-- <a :key='item.name'>{{item.id}}</a> -->
+                <ul class='parent-ul' :key='item.name' >
                     <li v-for='item2 in item.children' :key='item2.name' >
                         <div class='title'>
                             <i class='fa fa-bars'></i>
@@ -33,13 +34,21 @@ export default {
         return{
             data,
             selected: 0, // 初始化第一个栏块高亮
-            num: 1
+            num: 1,
+            index:0
         }
     },
     methods: {
        change (index) {
+           debugger
             this.selected = index
+        },
+        show(){
+            for(var i=0;i<data.lenght;i++){
+                console.log(i.id);
+            }
         }
+        
   },
 }
 </script>
@@ -132,7 +141,7 @@ i[class^='fa'] {
     color: #999999;
 }
 
-.parent-ul{
+/* .parent-ul{
     display: none;
 }
 .parent-ul:first-child{
@@ -140,5 +149,5 @@ i[class^='fa'] {
 }
 .show{
     display: block;
-}
+} */
 </style>

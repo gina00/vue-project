@@ -1,11 +1,9 @@
-[
-    {
+[{
+        "id": 0,
         "listName": "核心业务",
-        "children": [
-            {
+        "children": [{
                 "name": "入网类",
-                "children": [
-                    {
+                "children": [{
                         "name": "预约入网"
                     },
                     {
@@ -16,8 +14,7 @@
             },
             {
                 "name": "产品类",
-                "children": [
-                    {
+                "children": [{
                         "name": "产品受理"
                     },
                     {
@@ -47,8 +44,7 @@
             },
             {
                 "name": "营销类",
-                "children": [
-                    {
+                "children": [{
                         "name": "营销受理"
                     },
                     {
@@ -79,12 +75,11 @@
         ]
     },
     {
+        "id": 1,
         "listName": "实名登记",
-        "children": [
-            {
+        "children": [{
                 "name": "个人客户实名",
-                "children": [
-                    {
+                "children": [{
                         "name": "普通入网"
                     },
                     {
@@ -102,8 +97,7 @@
             },
             {
                 "name": "单位客户实名",
-                "children": [
-                    {
+                "children": [{
                         "name": "单位用户入网"
                     },
                     {
@@ -117,12 +111,11 @@
         ]
     },
     {
+        "id": 2,
         "listName": "家宽业务",
-        "children": [
-            {
+        "children": [{
                 "name": "家庭业务融合产品",
-                "children": [
-                    {
+                "children": [{
                         "name": "普通入网"
                     },
                     {
@@ -140,8 +133,7 @@
             },
             {
                 "name": "宽带单产品",
-                "children": [
-                    {
+                "children": [{
                         "name": "单位用户入网"
                     },
                     {
@@ -151,10 +143,9 @@
                         "name": "单位客户档案补正"
                     }
                 ]
-            },{
+            }, {
                 "name": "互联网电视单产品",
-                "children": [
-                    {
+                "children": [{
                         "name": "单位用户入网"
                     },
                     {

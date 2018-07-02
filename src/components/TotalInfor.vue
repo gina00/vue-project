@@ -117,13 +117,14 @@ P {
 
 .iconBox {
     display: inline-block;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     text-align: center;
-    line-height: 59px;
+    line-height: 70px;
     border-radius: 50px;
     font-size: 30px;
     color: #fff;
+    margin-top: 8px;
 }
 
 .balance {

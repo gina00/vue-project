@@ -24,9 +24,9 @@
           <section>
               <ul class="list-item">
                 <template v-for="hot in list" >
-                  <li v-for="item in hot.hot" :key="item.name">
+                  <li v-for="(item,index) in hot.hot" :key="item.name">
                     <a class="hotItem">
-                      <img @mouseover="s(item)" :src="item.icon">
+                      <img @mouseover="changImg(index)" @mouseout="outHide" :src="item.icon">
                       <p>{{item.operateName}}</p>
                     </a>
                   </li>
@@ -112,11 +112,23 @@ export default {
       isnomal: true,
       nomal: 0,
       input10: "",
-      radio: '1'
-    };
+      radio: '1',
+      src:'item.icon'
+    }
   },
   methods: {
-    s: function(item) {}
+    s: function(item) {
+      src=item.icon+"_hover";
+    },
+    changImg:function(index){
+      var data=this.list[1].hot
+      var src=data[index].icon
+      var src2=data[index].icon_hover
+      this.src=src2  
+    },
+    outMove:function(){
+      this.src2=src 
+    }
   }
 };
 </script>
