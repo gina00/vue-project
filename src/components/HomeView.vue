@@ -25,9 +25,9 @@
                 <ul class="list-item">
                     <template v-for="hot in list">
                         <li v-for="(item,index) in hot.hot" :key="item.name">
-                            <a class="hotItem" @mouseenter="showActive(index)" @mouseleave="showActive(0)">
+                            <a class="hotItem" @mouseenter="showActive(index+1)" @mouseleave="showActive(0)">
                                 <img class="img1" :src=item.icon>
-                                <img v-show="active === index" class="hide_tab" :src=item.icon_hover >
+                                <img v-show="active === (index+1)" class="hide_tab" :src=item.icon_hover >
                                 <p>{{item.operateName}}</p>
                             </a>
                         </li>
@@ -138,7 +138,8 @@ export default {
             input10: "",
             radio: '1',
             src: '',
-            active: 0
+            active: 0,
+            index:1
         }
     },
     methods: {
@@ -156,6 +157,7 @@ export default {
         },
         showActive(index) {
             this.active = index
+            index=1
         }
     }
 };
