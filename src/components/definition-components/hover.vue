@@ -30,14 +30,6 @@ export default {
         }
         
     },
-    // computed: {
-    //     styleObject: function () {
-    //         return {
-    //             background: "url('../../../static/images/u134.png')",
-    //             backgroundSize: 'cover',
-    //         }
-    //     }
-    // },
     methods: {
         showActive(index) {
             this.active = index;

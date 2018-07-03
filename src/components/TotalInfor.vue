@@ -74,6 +74,7 @@ import list from '../data/hotBusiness.json'
 import mkinforData from './table-components/marketInforTable.vue'
 export default {
     components:{
+        name:'totalinfor',
        'mkinfor-data' :mkinforData
     },
     props: ['totalInfor'],

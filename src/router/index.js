@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import hover from '@/components/definition-components/hover.vue'
+import mkinforData from '@/components/TotalInfor.vue'
 import Header from '@/views/Header'
 
 Vue.use(Router)
@@ -13,9 +13,9 @@ export default new Router({
             component: Header
         },
         {
-            path: '/hover',
-            name: 'Hover',
-            component: hover
+            path: '/total',
+            name: 'totalinfor',
+            component: mkinforData
         }
     ]
 })

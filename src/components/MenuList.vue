@@ -1,28 +1,25 @@
 <template>
 <div>
-    <ul class='menuList' >
-        <li v-for='(root,index) in data' :key='root.name' @click='change(index)'
-        :class='{active:selected==index}' >
+    <ul class='menuList'>
+        <li v-for='(root,index) in data' :key='root.name' @click='change(index)' :class='{active:selected==index}'>
             <a href='#'>{{root.listName}}</a>
         </li>
     </ul>
     <div class='childList'>
-        <template v-for='item in data' v-if="item.id==index" @click="show()">
-            <!-- <a :key='item.name'>{{item.id}}</a> -->
-                <ul class='parent-ul' :key='item.name' >
-                    <li v-for='item2 in item.children' :key='item2.name' >
-                        <div class='title'>
-                            <i class='fa fa-bars'></i>
-                            <span class='titleText'>{{item2.name}}</span>
-                        </div>
-                        <ul class='item-ul'>
-                            <li v-for='item3 in item2.children' :key='item3.name'>
-                                <a>{{item3.name}}</a></li>
-                            <!-- <li class='disable'><a aria-disabled='true'>测试/设备卡开户(新)</a></li> -->
-                        </ul>
-                    </li>
+        <!-- <a :key='item.name'>{{item.id}}</a> -->
+        <ul class='parent-ul'>
+            <li v-for='item in data[selected].children' :key='item.name'>
+                <div class='title'>
+                    <i class='fa fa-bars'></i>
+                    <span class='titleText'>{{item.name}}</span>
+                </div>
+                <ul class='item-ul'>
+                    <li v-for='item2 in item.children' :key='item2.name'>
+                        <a>{{item2.name}}</a></li>
+                    <!-- <li class='disable'><a aria-disabled='true'>测试/设备卡开户(新)</a></li> -->
                 </ul>
-        </template>
+            </li>
+        </ul>
     </div>
 </div>
 </template>
@@ -30,26 +27,26 @@
 <script>
 import data from '../data/menulist.json'
 export default {
-    data (){
-        return{
+    data() {
+        return {
+            //所有数据
             data,
+            //当前标签页菜单数据
+            menuData: [],
             selected: 0, // 初始化第一个栏块高亮
-            num: 1,
-            index:0
+            num: 1
         }
     },
     methods: {
-       change (index) {
-           debugger
-            this.selected = index
-        },
-        show(){
-            for(var i=0;i<data.lenght;i++){
-                console.log(i.id);
-            }
+        change(index) {
+            this.selected = index;
+            //清空数组
+            this.menuData.splice(0, this.menuData.length);
+            this.menuData.push(...this.data[index].children);
+            console.log(this.data[index].children);
         }
-        
-  },
+
+    },
 }
 </script>
 
@@ -140,14 +137,4 @@ i[class^='fa'] {
 .disable {
     color: #999999;
 }
-
-/* .parent-ul{
-    display: none;
-}
-.parent-ul:first-child{
-    display: block;
-}
-.show{
-    display: block;
-} */
 </style>

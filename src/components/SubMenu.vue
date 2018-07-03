@@ -4,17 +4,10 @@
         <li>
             <a class='fa fa-user-circle-o' aria-hidden='true' @click='toggle()'></a>
         </li>
-        <li class='active'>
-            <a class='fa fa-home' aria-hidden='true'></a>
-        </li>
-        <li>
-            <a class='fa fa-newspaper-o' aria-hidden='true'></a>
-        </li>
-        <li>
-            <a class='fa fa-id-card-o' aria-hidden='true'></a>
-        </li>
-        <li>
-            <a class='fa fa-volume-up' aria-hidden='true'></a>
+        <li v-for="(item,index) in classList" :key="item.name" :class='{active:selected==index}' @click='change(index)'>
+            <router-link to="/total">
+                <a class="fa" :class='[classList[index]]'></a>
+            </router-link>
         </li>
     </ul>
     <div class='userinfo' v-show='isshow'>
@@ -106,23 +99,33 @@
 
 <script>
 export default {
-  data () {
-    return {
-      input: '',
-      isshow: true
-    }
-  },
-  methods: {
-    handleOpen (key, keyPath) {
-      console.log(key, keyPath)
+    data() {
+        return {
+            input: '',
+            isshow: true,
+            selected: 0,
+            classList: [
+                'fa-home',
+                'fa-newspaper-o',
+                'fa-id-card-o',
+                'fa-volume-up'
+            ]
+        }
     },
-    handleClose (key, keyPath) {
-      console.log(key, keyPath)
-    },
-    toggle (){
-      this.isshow = !this.isshow
+    methods: {
+        handleOpen(key, keyPath) {
+            console.log(key, keyPath)
+        },
+        handleClose(key, keyPath) {
+            console.log(key, keyPath)
+        },
+        toggle() {
+            this.isshow = !this.isshow
+        },
+        change(index) {
+            this.selected = index;
+        }
     }
-  }
 }
 </script>
 
@@ -130,87 +133,105 @@ export default {
 ul,
 li,
 p {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
 .aside-menu ul li a.fa-user-circle-o {
-  color: #00ccff;
+    color: #00ccff;
 }
+
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
+    width: 200px;
 }
-.el-container{
+
+.el-container {
     min-height: 800px;
 }
+
 .aside-menu {
     height: 100%;
-  position: relative;
+    position: relative;
 }
+
 .aside-menu-ul {
-  width: 44px;
-  height: 100%;
-  background: #00253e;
+    width: 44px;
+    height: 100%;
+    background: #00253e;
 }
+
 .aside-menu ul li {
-  padding: 12px 0;
-  margin-bottom: 5px;
+    padding: 12px 0;
+    margin-bottom: 5px;
 }
+
 .aside-menu ul li a {
-  color: #fff;
-  font-size: 20px;
+    color: #fff;
+    font-size: 20px;
 }
+
 .aside-menu ul li a:hover {
-  color: #00ccff;
-  cursor: pointer;
+    color: #00ccff;
+    cursor: pointer;
 }
+
 .aside-menu ul li.active {
-  color: #00ccff;
-  background: #00456b;
-  border-left: 3px solid #00ccff;
+    color: #00ccff;
+    background: #00456b;
+    border-left: 3px solid #00ccff;
 }
+
 .aside-menu ul li.active a {
-  color: #00ccff;
+    color: #00ccff;
 }
+
 .userinfo {
-  width: 165px;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid #00ccff;
-  position: absolute;
-  top: 0px;
-  left: 44px;
+    width: 165px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #00ccff;
+    position: absolute;
+    top: 0px;
+    left: 44px;
 }
+
 .title {
-  border-bottom: 1px solid #00ccff;
-  text-align: left;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  color: #019ae5;
-  position: relative;
+    border-bottom: 1px solid #00ccff;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    color: #019ae5;
+    position: relative;
 }
+
 .title i {
-  position: absolute;
-  right: 0px;
+    position: absolute;
+    right: 0px;
 }
+
 .el-input {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 .info-style {
-  line-height: 22px;
-  margin-bottom: 20px;
-  text-align: left;
-  font-size: 12px;
-  color: #333;
+    line-height: 22px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #333;
 }
+
 .info-title {
-  color: #0af;
+    color: #0af;
 }
+
 .number {
-  font-size: 16px;
-  color: #57d785;
+    font-size: 16px;
+    color: #57d785;
 }
+
 .disable {
-  color: #999;
+    color: #999;
 }
 </style>
