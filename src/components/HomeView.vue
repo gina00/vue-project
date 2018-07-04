@@ -26,8 +26,8 @@
                     <template v-for="hot in list">
                         <li v-for="(item,index) in hot.hot" :key="item.name">
                             <a class="hotItem" @mouseenter="showActive(index+1)" @mouseleave="showActive(0)">
-                                <img class="img1" :src=item.icon>
-                                <img v-show="active === (index+1)" class="hide_tab" :src=item.icon_hover >
+                                <img class="img1" :src="item.icon">
+                                <img v-show="active === (index+1)" class="hide_tab" :src="item.icon_hover">
                                 <p>{{item.operateName}}</p>
                             </a>
                         </li>
@@ -104,29 +104,6 @@
 <script>
 import list from '../data/hotBusiness.json'
 export default {
-    props: {
-        hot: {
-            type: Array,
-            default () {
-                return [{
-                        oprate: "sda"
-                    },
-                    {
-                        oprate: "sda"
-                    },
-                    {
-                        oprate: "sda"
-                    },
-                    {
-                        oprate: "sda"
-                    }
-                ];
-            }
-        }
-    },
-    propsData: {
-        msg: "hello"
-    },
     data() {
         return {
             list,
@@ -138,29 +115,15 @@ export default {
             input10: "",
             radio: '1',
             src: '',
-            active: 0,
-            index:1
+            active: 0
         }
     },
     methods: {
-        moveInt: function (index) {
-            var data = this.list[1].hot
-            var src = data[index].icon
-            var src2 = data[index].icon_hover
-            this.src = src2
-        },
-        moveOut: function (index) {
-            var data = this.list[1].hot
-            var src = data[index].icon
-            var src2 = data[index].icon_hover
-            this.src = src
-        },
         showActive(index) {
             this.active = index
-            index=1
         }
     }
-};
+}
 </script>
 
 <style scoped>

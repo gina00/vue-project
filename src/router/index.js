@@ -1,21 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
-import mkinforData from '@/components/TotalInfor.vue'
-import Header from '@/views/Header'
+import Home from '@/components/Index.vue'
+
 
 Vue.use(Router)
 
 export default new Router({
     routes: [{
             path: '/',
-            name: 'Header',
-            component: Header
+            redirect: '/index'
+        },
+        {
+            path: '/index',
+            name: 'Home',
+            component: Home
         },
         {
             path: '/total',
             name: 'totalinfor',
-            component: mkinforData
+            component: resolve => require(['@/components/TotalInfor.vue'], resolve)
         }
     ]
 })
