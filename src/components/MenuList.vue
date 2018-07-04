@@ -14,9 +14,9 @@
                     <span class='titleText'>{{item.name}}</span>
                 </div>
                 <ul class='item-ul'>
-                    <li v-for='item2 in item.children' :key='item2.name'>
-                        <a>{{item2.name}}</a></li>
-                    <!-- <li class='disable'><a aria-disabled='true'>测试/设备卡开户(新)</a></li> -->
+                    <li v-for='item2 in item.children' :key='item2.name' :class='{disable:item2.disable}'>
+                        <a>{{item2.name}}</a>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -123,7 +123,11 @@ li {
     cursor: pointer;
 }
 
-.item-ul li a[aria-disabled='true']:hover {
+.disable {
+    color: #999999;
+}
+
+.item-ul li.disable a:hover {
     color: #999;
     cursor: auto;
 }
@@ -132,9 +136,5 @@ i[class^='fa'] {
     color: #e30077;
     font-size: 16px;
     display: inline-block;
-}
-
-.disable {
-    color: #999999;
 }
 </style>

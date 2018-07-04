@@ -1,13 +1,11 @@
 <template>
-<div class='aside-menu'>
+<div class='aside-menu' :style="{width:Width}">
     <ul class='aside-menu-ul'>
         <li>
-            <a class='fa fa-user-circle-o' aria-hidden='true' @click='toggle()'></a>
+            <a class='fa fa-user-circle-o' :class="classObject" aria-hidden='true' @click='toggle()'></a>
         </li>
         <li v-for="(item,index) in classList" :key="item.name" :class='{active:selected==index}' @click='change(index)'>
-            <router-link to="/total">
-                <a class="fa" :class='[classList[index]]'></a>
-            </router-link>
+            <a class="fa" :class='[classList[index]]'></a>
         </li>
     </ul>
     <div class='userinfo' v-show='isshow'>
@@ -103,13 +101,16 @@ export default {
         return {
             input: '',
             isshow: true,
+            error: null,
             selected: 0,
             classList: [
                 'fa-home',
                 'fa-newspaper-o',
                 'fa-id-card-o',
                 'fa-volume-up'
-            ]
+            ],
+            Width:231+'px',
+            activeWidth:'auto'
         }
     },
     methods: {
@@ -121,9 +122,22 @@ export default {
         },
         toggle() {
             this.isshow = !this.isshow
+            if(!this.isshow){
+               this.Width=this.activeWidth
+            }
+            else{
+                this.Width=231+'px'
+            }
         },
         change(index) {
             this.selected = index;
+        }
+    },
+    computed: {
+        classObject: function () {
+            return {
+                'toggle-o': this.isshow && !this.error,
+            }
         }
     }
 }
@@ -138,7 +152,11 @@ p {
     padding: 0;
 }
 
-.aside-menu ul li a.fa-user-circle-o {
+.el-aside {
+    width: auto;
+}
+
+.aside-menu ul li a.toggle-o {
     color: #00ccff;
 }
 
