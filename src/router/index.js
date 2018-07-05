@@ -25,6 +25,11 @@ export default new Router({
             path: '/login',
             name: 'login',
             component: Login
+        },
+        {
+            path: '/regist',
+            name: 'regist',
+            component: resolve => require(['@/components/user/Regist.vue'], resolve)
         }
     ]
 })

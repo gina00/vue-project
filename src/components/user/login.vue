@@ -26,12 +26,16 @@
                     <div class="login-ipt">
                         <el-input class="fa fa-user-o" placeholder="用户名" v-model="input" clearable></el-input>
                         <el-input class="fa fa-expeditedssl" placeholder="密码" v-model="input" clearable></el-input>
-                        <el-input class="fa fa-envelope-o" placeholder="短信验证码" v-model="input" clearable></el-input>
+                        <el-input class="fa fa-envelope-o" placeholder="短信验证码" v-model="input" clearable>
+                            <button>获取短信</button>
+                        </el-input>
                         <el-button type="primary">登录</el-button>
                         <div class="regitBox">
                             <p>
                                 <span class="noaccount">没有账号</span>
-                                <a class="common-text">注册</a>
+                                <router-link class="common-text" to="/regist">
+                                    注册
+                                </router-link>
                             </p>
                             <p>
                                 <a class="common-text" @click="open">忘记密码</a>
@@ -54,21 +58,21 @@ export default {
     data() {
         return {
             input: '',
-            message:'',
+            message: '',
         }
     },
     methods: {
         open() {
-        this.$alert('这是一段内容', '标题名称', {
-          confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
+            this.$alert('这是一段内容', '标题名称', {
+                confirmButtonText: '确定',
+                callback: action => {
+                    this.$message({
+                        type: 'info',
+                        message: `action: ${ action }`
+                    });
+                }
             });
-          }
-        });
-      }
+        }
     }
 }
 </script>
@@ -171,7 +175,8 @@ export default {
     font-size: 12px;
     justify-content: space-between;
 }
-.footText{
+
+.footText {
     color: #00ccff;
     text-align: center;
     margin-top: 100px;
