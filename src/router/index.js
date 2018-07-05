@@ -19,6 +19,11 @@ export default new Router({
             path: '/total',
             name: 'totalinfor',
             component: resolve => require(['@/components/TotalInfor.vue'], resolve)
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: resolve => require(['@/components/Login.vue'], resolve)
         }
     ]
 })

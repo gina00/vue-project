@@ -1,3 +1,5 @@
+/*========================base css==============================*/
+
 body {
     font-family: PingFangSC-Semibold, "Microsoft YaHei", Arial, sans-serif, Helvetica, STHeiti
 }
@@ -8,6 +10,17 @@ li {
     margin: 0;
     padding: 0;
 }
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*========================base css==============================*/
+
+
+/*========================scoll css==============================*/
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -22,6 +35,12 @@ li {
     border-radius: 5px;
     background: #999;
 }
+
+
+/*========================scoll css==============================*/
+
+
+/*========================homeview css==============================*/
 
 .el-input__inner {
     border-radius: 0px;
@@ -77,3 +96,33 @@ li {
 .el-button {
     border-radius: 0px;
 }
+
+
+/*========================homeview css==============================*/
+
+
+/*========================login css==============================*/
+
+.fa.el-input.el-input--suffix .el-input__inner {
+    padding-left: 40px !important;
+}
+
+.login-ipt .el-button {
+    width: 100%;
+    background: #00ccff;
+    margin: 15px 0 30px;
+}
+
+.login-ipt .el-button--primary {
+    border-color: #00ccff;
+}
+
+.login-ipt .el-button--primary:focus,
+.login-ipt .el-button--primary:hover {
+    background: #00bef0;
+    border-color: #00bef0;
+    color: #fff;
+}
+
+
+/*========================login css==============================*/

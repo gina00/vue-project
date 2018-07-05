@@ -11,7 +11,6 @@
                 <main-view v-model="selected">{{selected}}</main-view>
             </el-main>
         </el-container>
-        <router-view></router-view>
     </el-container>
 </template>
 
