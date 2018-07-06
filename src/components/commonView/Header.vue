@@ -2,16 +2,16 @@
 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
     <div class="logoBox">
         <span class="andLogo">
-            <img src="../../static/images/u12.png">
+            <img src="/static/images/u12.png">
         </span>
         <span class="moveLogo">
-            <img src="../../static/images/u14.png">
+            <img src="/static/images/u14.png">
         </span>
     </div>
     <el-dropdown trigger="click">
         <span class="el-dropdown-link">
           <img
-                src="../../static/images/u19.png"
+                src="/static/images/u19.png"
                 class="menuIcon"
             >
             <i class="el-icon-arrow-down el-icon--right"></i>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import MenuList from './MenuList.vue'
+import MenuList from '../MenuList.vue'
 export default {
     name: 'Headers',
     components: {

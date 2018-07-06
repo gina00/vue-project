@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import list from '../data/hotBusiness.json'
+import list from '../../data/hotBusiness.json'
 export default {
     data() {
         return {

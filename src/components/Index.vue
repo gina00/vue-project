@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import AppHeader from '@/components/Header.vue'
-import SubMenu from '@/components/SubMenu.vue'
+import AppHeader from '@/components/commonView/Header.vue'
+import SubMenu from '@/components/commonView/SubMenu.vue'
 import MainView from '@/components/MainView.vue'
 export default {
     name: 'Home',

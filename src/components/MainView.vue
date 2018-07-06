@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import homePage from './HomeView.vue'
-import total from './TotalMenu.vue'
+import homePage from '@/components/mainView/HomeView.vue'
+import total from '@/components/mainView/TotalMenu.vue'
 export default {
   name: 'content-page',
   components: {

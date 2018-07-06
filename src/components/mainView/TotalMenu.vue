@@ -17,7 +17,7 @@
 
 <script>
 import totalData from './TotalInfor.vue'
-import hover from './definition-components/hover.vue'
+import hover from '@/components/definition-components/hover.vue'
 export default {
     components: {
         'total-infor': totalData,
