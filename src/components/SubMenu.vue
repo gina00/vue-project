@@ -177,6 +177,7 @@ p {
     width: 44px;
     height: 100%;
     background: #00253e;
+    float: left;
 }
 
 .aside-menu ul li {
@@ -209,9 +210,8 @@ p {
     padding: 10px;
     background: #fff;
     border: 1px solid #00ccff;
-    position: absolute;
-    top: 0px;
-    left: 44px;
+    float: left;
+    padding-bottom: 49px;
 }
 
 .title {

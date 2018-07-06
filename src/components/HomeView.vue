@@ -50,38 +50,11 @@
                         <el-col :span="5"><span class="input-text">金额：</span></el-col>
                         <el-col :span="17">
                             <el-row>
-                                <el-col :span="12">
-                                    <el-button>30</el-button>
-                                </el-col>
-                                <el-col :span="12">
-                                    <el-button>50</el-button>
+                                <el-col :span="12" v-for='item in moneys' :key="item.name">
+                                    <el-button>{{item}}</el-button>
                                 </el-col>
                             </el-row>
                             <el-row>
-                                <el-col :span="12">
-                                    <el-button>100</el-button>
-                                </el-col>
-                                <el-col :span="12">
-                                    <el-button>200</el-button>
-                                </el-col>
-                            </el-row>
-                            <el-row>
-                                <el-col :span="12">
-                                    <el-button>300</el-button>
-                                </el-col>
-                                <el-col :span="12">
-                                    <el-button>500</el-button>
-                                </el-col>
-                            </el-row>
-                            <el-row>
-                                <el-col :span="12">
-                                    <el-button>800</el-button>
-                                </el-col>
-                                <el-col :span="12">
-                                    <el-button>其他</el-button>
-                                </el-col>
-                            </el-row>
-                            <el-row class="">
                                 <el-col :span="12">
                                     <el-radio v-model="radio" label="1">收据</el-radio>
                                 </el-col>
@@ -89,7 +62,7 @@
                                     <el-radio v-model="radio" label="2">发票</el-radio>
                                 </el-col>
                             </el-row>
-                            <el-row>
+                            <el-row class="choiceBox">
                                 <el-button type="primary" class="btn">立即充值</el-button>
                             </el-row>
                         </el-col>
@@ -115,7 +88,8 @@ export default {
             input10: "",
             radio: '1',
             src: '',
-            active: 0
+            active: 0,
+            moneys:['30','50','100','200','300','500','800','其他']
         }
     },
     methods: {
@@ -166,7 +140,9 @@ li {
     padding: 20px;
     overflow: auto;
 }
-
+.list-item{
+    margin-top: 20px;
+}
 .list-item li {
     float: left;
     width: calc(100% / 5);
@@ -223,11 +199,13 @@ section.hotBox {
     /* display: inline-block; */
     margin-right: 0;
     margin-left: 0;
+    padding-bottom: 0;
 }
 
 .quickmenu section {
     margin-left: 0px;
     font-size: 12px;
+    padding-bottom: 0;
 }
 
 .quickmenu section>div {

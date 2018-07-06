@@ -58,7 +58,7 @@
     <el-row>
         <el-col :span="24">
                 <el-tabs type="border-card">
-                    <el-tab-pane :label="productInfor">{{productInfor}}</el-tab-pane>
+                    <el-tab-pane :label="productInfor">{{totalInfor}}</el-tab-pane>
                     <el-tab-pane :label="marketingInfor">
                         <mkinfor-data></mkinfor-data>
                     </el-tab-pane>
@@ -77,7 +77,7 @@ export default {
         name:'totalinfor',
        'mkinfor-data' :mkinforData
     },
-    props: ['totalInfor'],
+    props: ['total-infor'],
     data() {
         return {
             list,

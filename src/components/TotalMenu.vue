@@ -1,5 +1,5 @@
 <template>
-<el-tabs v-model="activeName" @tab-click="handleClick">
+<el-tabs v-model="activeName" @tab-click="handleClick" class="totalmenu">
     <el-tab-pane :label="totalInfor" name="first">
         <total-infor :total-infor="totalInfor"></total-infor>
     </el-tab-pane>

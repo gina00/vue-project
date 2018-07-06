@@ -37,10 +37,6 @@ body {
     height: auto !important;
 }
 
-.el-aside {
-    min-height: 1000px;
-}
-
 .el-header,
 .el-footer {
     background-color: #019ae5;
