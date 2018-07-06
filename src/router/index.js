@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Index.vue'
-import Login from '@/components/user/Login.vue'
-
 
 Vue.use(Router)
 
@@ -17,14 +15,9 @@ export default new Router({
             component: Home
         },
         {
-            path: '/total',
-            name: 'totalinfor',
-            component: resolve => require(['@/components/TotalInfor.vue'], resolve)
-        },
-        {
             path: '/login',
             name: 'login',
-            component: Login
+            component: resolve => require(['@/components/user/Login.vue'], resolve)
         },
         {
             path: '/regist',
