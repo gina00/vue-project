@@ -2,18 +2,18 @@
 <div class="content">
     <el-row :gutter="24">
         <el-col :span="11" class="charBox">
-            <expand-bar></expand-bar>
+            <area-line></area-line>
         </el-col>
         <el-col :span="11" class="charBox">
-            <expand-bar></expand-bar>
+           <pie></pie>
         </el-col>
     </el-row>
     <el-row :gutter="24">
         <el-col :span="11" class="charBox">
-            <expand-bar></expand-bar>
+           <bar-stack></bar-stack>
         </el-col>
         <el-col :span="11" class="charBox">
-            <expand-bar></expand-bar>
+            
         </el-col>
     </el-row>
 </div>
@@ -21,10 +21,17 @@
 
 <script>
 import expandBar from '../echartView/expandBar.vue'
-
+import areaLine from '../echartView/areaLine.vue'
+import axisLine from '../echartView/axisLine.vue'
+import pie from '../echartView/pieView.vue'
+import barStack from '../echartView/barStack.vue'
 export default {
     components: {
-        'expand-bar': expandBar
+        'expand-bar': expandBar,
+        'area-line':areaLine,
+        'pie':pie,
+        'axis-line':axisLine,
+        'bar-stack':barStack
     }
 }
 </script>
