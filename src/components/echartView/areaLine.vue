@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import echarts from "vue-echarts";
 export default {
   data() {
     return {
