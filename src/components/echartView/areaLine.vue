@@ -4,7 +4,6 @@
 </template>
 
 <script>
-import echarts from "vue-echarts";
 export default {
   data() {
     return {
@@ -64,7 +63,7 @@ export default {
   },
   methods: {
     creatLine() {
-      var base = +new Date(1968, 9, 3);
+      var base = +new Date(2010, 1, 1);
       var oneDay = 24 * 3600 * 1000;
       var date = [];
       var data = [Math.random() * 300];
