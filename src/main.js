@@ -9,6 +9,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 import VueResource from 'vue-resource'
 import ECharts from 'vue-echarts'
 import 'font-awesome/css/font-awesome.css'
+import axios from "axios"
 
 // 此处引入静态资源
 require('../static/css/style.css')
@@ -20,8 +21,8 @@ Vue.config.silent = true
     //组件将通过 window.VueECharts 变量暴露接口： 
     //注册组件后即可使用
 Vue.component('chart', ECharts)
-
 Vue.prototype.$echarts = ECharts
+Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({

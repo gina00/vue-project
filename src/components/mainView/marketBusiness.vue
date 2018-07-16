@@ -30,7 +30,6 @@
 <script>
 import expandBar from '../echartView/expandBar.vue'
 import areaLine from '../echartView/areaLine.vue'
-import axisLine from '../echartView/axisLine.vue'
 import pie from '../echartView/pieView.vue'
 import barStack from '../echartView/barStack.vue'
 import lineAqi from '../echartView/lineAqi.vue'
@@ -41,7 +40,6 @@ export default {
         'expand-bar': expandBar,
         'area-line':areaLine,
         'pie':pie,
-        'axis-line':axisLine,
         'bar-stack':barStack,
         'line-aqi':lineAqi,
         'bar-animation':barAnimation,
