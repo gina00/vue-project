@@ -90,6 +90,16 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted(){
+    this.getinfo();
+  },
+  methods:{
+      getinfo(){
+        this.$axios.get('/api').then((response) => {
+          this.msg=response.data
+        })
+      }
   }
 }
 </script>

@@ -6,7 +6,9 @@
     <el-tab-pane :label="marketingBusiness" name="second" >
       <user-infor></user-infor>
     </el-tab-pane>
-    <el-tab-pane :label="myOccur" name="third">{{myOccur}}</el-tab-pane>
+    <el-tab-pane :label="myOccur" name="third">
+        <v-get></v-get>
+    </el-tab-pane>
     <el-tab-pane :label="productInfor" name="fourth">{{productInfor}}</el-tab-pane>
     <el-tab-pane :label="customerInfor" name="five">{{customerInfor}}</el-tab-pane>
     <el-tab-pane :label="familyInfor" name="six">{{familyInfor}}</el-tab-pane>
@@ -18,10 +20,12 @@
 <script>
 import totalData from './TotalInfor.vue'
 import userInfor from './marketBusiness.vue'
+import vGet from '../HelloWorld.vue'
 export default {
     components: {
         'total-infor': totalData,
-        'user-infor':userInfor
+        'user-infor':userInfor,
+        'v-get':vGet
     },
     data() {
         return {
