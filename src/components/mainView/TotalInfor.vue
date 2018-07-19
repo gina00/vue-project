@@ -57,34 +57,44 @@
     </el-row>
     <el-row>
         <el-col :span="24">
-                <el-tabs type="border-card">
-                    <el-tab-pane :label="productInfor">{{totalInfor}}</el-tab-pane>
-                    <el-tab-pane :label="marketingInfor">
-                        <mkinfor-data></mkinfor-data>
-                    </el-tab-pane>
-                </el-tabs>
-           
+            <el-tabs type="border-card">
+                <el-tab-pane :label="productInfor">{{totalInfor}}</el-tab-pane>
+                <el-tab-pane :label="marketingInfor">
+                    <mkinfor-data></mkinfor-data>
+                </el-tab-pane>
+            </el-tabs>
+
         </el-col>
     </el-row>
 </div>
 </template>
 
 <script>
-import list from '../../data/hotBusiness.json'
+//import list from '../../data/hotBusiness.json'
 import mkinforData from '../table-components/marketInforTable.vue'
 export default {
-    components:{
-        name:'totalinfor',
-       'mkinfor-data' :mkinforData
+    components: {
+        name: 'totalinfor',
+        'mkinfor-data': mkinforData
     },
     props: ['total-infor'],
     data() {
         return {
-            list,
+            list:[],
             referralServices: '推荐业务',
-            productInfor:'产品信息',
-            marketingInfor:'营销信息',
-            
+            productInfor: '产品信息',
+            marketingInfor: '营销信息',
+
+        }
+    },
+    mounted() {
+        this.getReferralServices()
+    },
+    methods: {
+        getReferralServices() {
+            this.$axios.get('/api/user/hotMenu').then((response) => {
+                this.list = response.data
+            })
         }
     }
 }
@@ -243,11 +253,13 @@ P {
 }
 
 /*=========================首页共有样式引用==========================*/
-.el-tabs--border-card{
+
+.el-tabs--border-card {
     box-shadow: none;
     border: none;
 }
-.el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
+
+.el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
     border-top-color: #dcdfe6;
 }
 </style>

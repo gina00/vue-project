@@ -23,8 +23,12 @@ Vue.config.silent = true
 Vue.component('chart', ECharts)
 Vue.prototype.$echarts = ECharts
 Vue.prototype.$axios = axios
-
-/* eslint-disable no-new */
+    // 引入mockjs
+require('../node_modules/mockjs/dist/mock.js')
+Vue.filter('getYMD', function(input) {
+        return input.split(' ')[0];
+    })
+    /* eslint-disable no-new */
 new Vue({
     el: '#app2',
     render: h => h(App),

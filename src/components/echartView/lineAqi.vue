@@ -94,6 +94,16 @@ export default {
                 }
             }
         }
+    },
+    mounted(){
+        this.getAqi()
+    },
+    methods:{
+        getAqi() {
+            this.$axios.get('/api/chart/aqi').then((response) => {
+                this.data = response.data
+            })
+        }
     }
 }
 </script>

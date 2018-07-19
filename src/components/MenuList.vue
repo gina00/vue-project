@@ -25,17 +25,20 @@
 </template>
 
 <script>
-import data from '../data/menulist.json'
+// import data from '../data/menulist.json'
 export default {
     data() {
         return {
             //所有数据
-            data,
+            data: [],
             //当前标签页菜单数据
             menuData: [],
             selected: 0, // 初始化第一个栏块高亮
             num: 1
         }
+    },
+    mounted() {
+        this.getMenuInfo()
     },
     methods: {
         change(index) {
@@ -43,9 +46,13 @@ export default {
             //清空数组
             this.menuData.splice(0, this.menuData.length);
             this.menuData.push(...this.data[index].children);
-            console.log(this.data[index].children);
+            // console.log(this.data[index].children);
+        },
+        getMenuInfo() {
+            this.$axios.get('/api/user/menulsit').then((response) => {
+                this.data = response.data
+            })
         }
-
     },
 }
 </script>

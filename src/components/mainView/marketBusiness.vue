@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import expandBar from '../echartView/expandBar.vue'
 import areaLine from '../echartView/areaLine.vue'
 import pie from '../echartView/pieView.vue'
 import barStack from '../echartView/barStack.vue'
@@ -37,7 +36,6 @@ import barAnimation from '../echartView/barAnimation.vue'
 import radar from '../echartView/radar.vue'
 export default {
     components: {
-        'expand-bar': expandBar,
         'area-line':areaLine,
         'pie':pie,
         'bar-stack':barStack,

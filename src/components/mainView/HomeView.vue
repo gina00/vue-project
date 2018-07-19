@@ -75,11 +75,11 @@
 </template>
 
 <script>
-import list from '../../data/hotBusiness.json'
+//import list from '../../data/hotBusiness.json'
 export default {
     data() {
         return {
-            list,
+            list:[],
             commonUse: "常用功能",
             hotBusiness: "热门业务",
             quickMenu: "快捷缴费",
@@ -89,13 +89,21 @@ export default {
             radio: '1',
             src: '',
             active: 0,
-            moneys:['30','50','100','200','300','500','800','其他']
+            moneys: ['30', '50', '100', '200', '300', '500', '800', '其他']
         }
     },
     methods: {
         showActive(index) {
             this.active = index
+        },
+        getMenuInfo() {
+            this.$axios.get('/api/user/hotMenu').then((response) => {
+                this.list = response.data
+            })
         }
+    },
+    mounted() {
+        this.getMenuInfo()
     }
 }
 </script>
@@ -140,9 +148,13 @@ li {
     padding: 20px;
     overflow: auto;
 }
-.list-item{
-    margin-top: 20px;
+
+.list-item {
+    margin: 10px 0;
+    float: left;
+    width: 100%;
 }
+
 .list-item li {
     float: left;
     width: calc(100% / 5);
@@ -244,7 +256,8 @@ section.hotBox {
     bottom: 57px;
     left: 24px;
 }
-.activeClass{
-  display: none;
+
+.activeClass {
+    display: none;
 }
 </style>
