@@ -81,7 +81,6 @@ export default {
                     password: this.password
                 })
                 .then(response => {
-                    console.log("sss")
                     this.$router.push({ path: '/index' })
                 })
                 .catch(response => {
