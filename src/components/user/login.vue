@@ -24,12 +24,11 @@
                 </el-col>
                 <el-col :span="10">
                     <div class="login-ipt">
-                        <el-input class="fa fa-user-o" placeholder="用户名" v-model="input" clearable></el-input>
-                        <el-input class="fa fa-expeditedssl" placeholder="密码" v-model="input" clearable></el-input>
-                        <el-input class="fa fa-envelope-o" placeholder="短信验证码" v-model="input" clearable>
-                            <button>获取短信</button>
-                        </el-input>
-                        <el-button type="primary">登录</el-button>
+                        <el-input class="fa fa-user-o" placeholder="用户名" v-model="username" clearable></el-input>
+                        <el-input class="fa fa-expeditedssl" type="password" placeholder="密码" v-model="password" clearable></el-input>
+                        <el-input class="fa fa-envelope-o" placeholder="短信验证码" v-model="input" clearable></el-input>
+                        <span v-if="isshow" class="tipText">用户名或密码错误</span>
+                        <el-button type="primary" @click="getInfor()">登录</el-button>
                         <div class="regitBox">
                             <p>
                                 <span class="noaccount">没有账号</span>
@@ -59,6 +58,9 @@ export default {
         return {
             input: '',
             message: '',
+            username:'',
+            password:'',
+            isshow:false
         }
     },
     methods: {
@@ -68,11 +70,25 @@ export default {
                 callback: action => {
                     this.$message({
                         type: 'info',
-                        message: `action: ${ action }`
+                        message: 'action: ${ action }'
                     });
                 }
             });
+        },
+        getInfor() {
+            this.$axios.post('/api/testUser', {
+                    username: this.username,
+                    password: this.password
+                })
+                .then(response => {
+                    console.log("sss")
+                    this.$router.push({ path: '/index' })
+                })
+                .catch(response => {
+                   this.isshow=true
+                })
         }
+
     }
 }
 </script>
@@ -148,13 +164,15 @@ export default {
 
 *[class^='fa'] {
     color: #c1c1c1;
-    margin-bottom: 20px;
 }
 
 .el-input.el-input--suffix {
     position: relative;
+    margin-top: 20px;
 }
-
+.el-input.el-input--suffix:first-child{
+    margin-top: 0px;
+}
 .el-input.el-input--suffix:before {
     position: absolute;
     top: 12px;
@@ -180,5 +198,9 @@ export default {
     color: #00ccff;
     text-align: center;
     margin-top: 100px;
+}
+.tipText{
+    font-size: 12px;
+    color: #ef1616;
 }
 </style>

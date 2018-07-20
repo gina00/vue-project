@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             //所有数据
-            data: [],
+            data: [{listName:"",children:[{children:[]}]}],
             //当前标签页菜单数据
             menuData: [],
             selected: 0, // 初始化第一个栏块高亮
