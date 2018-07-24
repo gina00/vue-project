@@ -2,14 +2,15 @@
 var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
 var appRouter = express.Router()
 var fs = require('fs')
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 //加载本地json数据
 var menuData = require('./data/menulist.json');
 var businessData = require('./data/hotBusiness.json');
+var userData = require('./data/userInfor.json');
 
 appRouter.route('/:apiName')
     .get(function(req, res) {
@@ -34,12 +35,9 @@ app.get('/api', function(req, res) {
     res.send('Hello World!');
 })
 
-app.get('/api/user', function(req, res) {
-    fs.readFile(__dirname + '/data/userInfor.json', 'utf8', function(err, data) {
-        if (err) throw err
-        var data = JSON.parse(data)
-        res.json(data)
-    })
+app.get('/api/user/infors', function(req, res) {
+    res.json(userData);
+
 })
 
 app.get('/api/user/menulsit', function(req, res) {

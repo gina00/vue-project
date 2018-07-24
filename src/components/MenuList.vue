@@ -4,6 +4,7 @@
         <li v-for='(root,index) in data' :key='root.name' @click='change(index)' :class='{active:selected==index}'>
             <a href='#'>{{root.listName}}</a>
         </li>
+        <el-input v-model='input' placeholder='请输入内容'></el-input>
     </ul>
     <div class='childList'>
         <!-- <a :key='item.name'>{{item.id}}</a> -->
@@ -30,7 +31,13 @@ export default {
     data() {
         return {
             //所有数据
-            data: [{listName:"",children:[{children:[]}]}],
+            data: [{
+                listName: "",
+                children: [{
+                    children: []
+                }]
+            }],
+            input:'',
             //当前标签页菜单数据
             menuData: [],
             selected: 0, // 初始化第一个栏块高亮

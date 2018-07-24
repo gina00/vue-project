@@ -14,7 +14,14 @@
             <i class='fa fa-arrow-circle-left' aria-hidden='true' @click='toggle()'></i>
         </div>
         <el-input v-model='input' placeholder='请输入内容'></el-input>
-        <div class='info-style'>
+        <div class='info-style' v-for='item in userData' :key="item.name">
+            <p :class="{'info-title':titleClass}">{{item.baseInfor}}</p>
+            <p v-for="item2 in item.Infor" :key="item2.name">
+                <span :class="{disable:item2.disable}">{{item2.title}}</span>
+                <span :class='{number:item2.hasClass}'>{{item2.value}}</span>
+            </p>
+        </div>
+        <!-- <div class='info-style'>
             <p class='info-title'>基本信息</p>
             <p>
                 <span>手机号码：</span>
@@ -90,7 +97,7 @@
                 <span class='disable'>用户星级：</span>
                 <span></span>
             </p>
-        </div>
+        </div> -->
     </div>
 </div>
 </template>
@@ -110,7 +117,9 @@ export default {
                 'fa-volume-up'
             ],
             Width:231+'px',
-            activeWidth:'auto'
+            activeWidth:'auto',
+            userData:[],
+            titleClass:true
         }
     },
     methods: {
@@ -131,7 +140,16 @@ export default {
         },
         change(index) {
             this.selected = index;
+        },
+        getInfor(){
+            this.$axios.get('/api/user/infors').then((response)=>{
+                this.userData=response.data
+                console.log(this.userData)
+            })
         }
+    },
+    mounted(){
+        this.getInfor()
     },
     computed: {
         classObject: function () {
