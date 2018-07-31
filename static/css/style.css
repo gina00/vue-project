@@ -136,6 +136,8 @@ p {
 
 .totalmenu .el-tabs__nav-wrap {
     margin-bottom: 0;
+    width: 99%;
+    position: relative;
 }
 
 .totalmenu .el-tabs__header:nth-child(1) .el-tabs__nav-wrap::after {

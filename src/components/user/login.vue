@@ -14,8 +14,8 @@
                 <el-col :span="14">
                     <div class="grid-content">
                         <div class="mainItem-l-top">
-                            <p>中国移动客户关系管理系统</p>
-                            <p>China Mobile Customer Relationship Management System</p>
+                            <p>{{systemCn}}</p>
+                            <p>{{systemEn}}</p>
                         </div>
                         <div class="mainItem-l-bottom">
                             <img src="/static/images/u899.png">
@@ -60,6 +60,8 @@ export default {
             message: '',
             username:'',
             password:'',
+            systemCn:'中国移动客户关系管理系统',
+            systemEn:'China Mobile Customer Relationship Management System',
             isshow:false
         }
     },

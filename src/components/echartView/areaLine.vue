@@ -17,7 +17,7 @@ export default {
         },
         title: {
           left: "center",
-          text: "大数据量面积图"
+          text: "中国移动销售量面积图"
         },
         toolbox: {
           feature: {
@@ -56,6 +56,7 @@ export default {
               shadowOffsetX: 2,
               shadowOffsetY: 2
             }
+            
           }
         ],
         series: []
@@ -64,7 +65,7 @@ export default {
   },
   methods: {
     creatLine() {
-      var base = +new Date(2010, 1, 1);
+      var base = +new Date(2015, 1, 1);
       var oneDay = 24 * 3600 * 1000;
       var date = [];
       var data = [Math.random() * 300];

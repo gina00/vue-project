@@ -38,32 +38,32 @@
         <div class="common-box quickmenu">
             <header>
                 <i class="left-icon"></i>
-                <span class="title-text">{{quickMenu}}</span>
+                <span class="title-text">{{quickMenu.title}}</span>
             </header>
             <section>
                 <div class="demo-input-suffix">
-                    <span class="input-text">手机号码：</span>
+                    <span class="input-text">{{quickMenu.phoneNumber}}</span>
                     <el-input placeholder="请输入号码" v-model="input10" clearable></el-input>
                 </div>
                 <div class="demo-input-suffix">
                     <el-row>
-                        <el-col :span="5"><span class="input-text">金额：</span></el-col>
+                        <el-col :span="5"><span class="input-text">{{quickMenu.money}}</span></el-col>
                         <el-col :span="17">
                             <el-row>
-                                <el-col :span="12" v-for='item in moneys' :key="item.name">
+                                <el-col :span="12" v-for='item in quickMenu.moneys' :key="item.name">
                                     <el-button>{{item}}</el-button>
                                 </el-col>
                             </el-row>
                             <el-row>
                                 <el-col :span="12">
-                                    <el-radio v-model="radio" label="1">收据</el-radio>
+                                    <el-radio v-model="radio" label="1">{{quickMenu.receipt}}</el-radio>
                                 </el-col>
                                 <el-col :span="12">
-                                    <el-radio v-model="radio" label="2">发票</el-radio>
+                                    <el-radio v-model="radio" label="2">{{quickMenu.invoice}}</el-radio>
                                 </el-col>
                             </el-row>
                             <el-row class="choiceBox">
-                                <el-button type="primary" class="btn">立即充值</el-button>
+                                <el-button type="primary" class="btn">{{quickMenu.immediateRecharge}}</el-button>
                             </el-row>
                         </el-col>
                     </el-row>
@@ -82,14 +82,22 @@ export default {
             list:[],
             commonUse: "常用功能",
             hotBusiness: "热门业务",
-            quickMenu: "快捷缴费",
+            quickMenu:{
+                title:"快捷缴费",
+                phoneNumber:"手机号码：",
+                money:"金额：",
+                moneys: ['30', '50', '100', '200', '300', '500', '800', '其他'],
+                receipt:"收据",
+                invoice:"发票",
+                immediateRecharge:"立即充值"
+            },
             isnomal: true,
             nomal: 0,
             input10: "",
             radio: '1',
             src: '',
             active: 0,
-            moneys: ['30', '50', '100', '200', '300', '500', '800', '其他']
+            
         }
     },
     methods: {

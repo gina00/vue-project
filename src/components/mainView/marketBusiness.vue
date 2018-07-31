@@ -56,10 +56,12 @@ export default {
     margin: 10px;
 }
 .charBox{
-    width: calc((100% - 30px ) / 2);
-    margin-right: 10px;
+    width: calc((100% - 10px ) / 2);
     margin-bottom: 10px;
     background: #fff;
     padding: 10px;
+}
+.el-row .charBox:first-child{
+    margin-right: 10px;
 }
 </style>

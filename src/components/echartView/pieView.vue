@@ -8,8 +8,8 @@ export default {
     return {
       option: {
         title: {
-          text: "某站点用户访问来源",
-          subtext: "纯属虚构",
+          text: "用户注册占比变化",
+          subtext: "当月注册",
           x: "center"
         },
         tooltip: {
