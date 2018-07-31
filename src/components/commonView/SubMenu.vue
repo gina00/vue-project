@@ -21,83 +21,6 @@
                 <span :class='{number:item2.hasClass}'>{{item2.value}}</span>
             </p>
         </div>
-        <!-- <div class='info-style'>
-            <p class='info-title'>基本信息</p>
-            <p>
-                <span>手机号码：</span>
-                <span class='number'>13500008888</span>
-            </p>
-            <p>
-                <span>客户姓名：</span>
-                <span>王小明</span>
-            </p>
-            <p>
-                <span class='disable'>客户类型：</span>
-                <span></span>
-            </p>
-        </div>
-        <div class='info-style'>
-            <p class='info-title'>业务信息</p>
-            <p>
-                <span>品牌名称：</span>
-                <span>全球通</span>
-            </p>
-            <p>
-                <span>归属区域：</span>
-                <span>福建福州</span>
-            </p>
-            <p>
-                <span class='disable'>用户状态：</span>
-                <span></span>
-            </p>
-            <p>
-                <span>开打时间：</span>
-                <span>2012-10-09</span>
-            </p>
-            <p>
-                <span class='disable'>基本产品：</span>
-                <span></span>
-            </p>
-            <p>
-                <span>当前积分：</span>
-                <span>5000</span>
-            </p>
-            <p>
-                <span class='disable'>可用余额：</span>
-                <span>70.32</span>
-            </p>
-            <p>
-                <span>欠费金额：</span>
-                <span>0.00</span>
-            </p>
-        </div>
-        <div class='info-style'>
-            <p class='info-title'>其他信息</p>
-            <p>
-                <span class='disable'>新档标志：</span>
-                <span></span>
-            </p>
-            <p>
-                <span>是否实名：</span>
-                <span>是</span>
-            </p>
-            <p>
-                <span class='disable'>核实标识：</span>
-                <span></span>
-            </p>
-            <p>
-                <span class='disable'>携号信息：</span>
-                <span></span>
-            </p>
-            <p>
-                <span class='disable'>信用等级：</span>
-                <span></span>
-            </p>
-            <p>
-                <span class='disable'>用户星级：</span>
-                <span></span>
-            </p>
-        </div> -->
     </div>
 </div>
 </template>
@@ -140,6 +63,7 @@ export default {
         },
         change(index) {
             this.selected = index;
+            this.$emit('input', index)
         },
         getInfor(){
             this.$axios.get('/api/user/infors').then((response)=>{

@@ -58,7 +58,9 @@
     <el-row>
         <el-col :span="24">
             <el-tabs type="border-card">
-                <el-tab-pane :label="productInfor">{{totalInfor}}</el-tab-pane>
+                <el-tab-pane :label="productInfor">
+                    <pdinfor-data></pdinfor-data>
+                </el-tab-pane>
                 <el-tab-pane :label="marketingInfor">
                     <mkinfor-data></mkinfor-data>
                 </el-tab-pane>
@@ -72,10 +74,12 @@
 <script>
 //import list from '../../data/hotBusiness.json'
 import mkinforData from '../table-components/marketInforTable.vue'
+import pdinforData from '../table-components/prodInforTable.vue'
 export default {
     components: {
         name: 'totalinfor',
-        'mkinfor-data': mkinforData
+        'mkinfor-data': mkinforData,
+        'pdinfor-data':pdinforData
     },
     props: ['total-infor'],
     data() {

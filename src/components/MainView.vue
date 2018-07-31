@@ -27,6 +27,7 @@ export default {
     'total': total
   },
   props: {
+    activeTabIndex:0,
     hotBusiness:{
       title: '热门业务'
     }
@@ -44,9 +45,24 @@ export default {
           title: '综合信息',
           name: '综合信息',
           content: 'total'
+        },
+        {
+          title: '综合信息2',
+          name: '综合信息2',
+          content: 'total2'
+        },
+        {
+          title: '综合信息3',
+          name: '综合信息3',
+          content: 'total3'
         }
       ],
       tabIndex: 2
+    }
+  },
+  watch:{
+    activeTabIndex:function(newVal){
+      this.editableTabsValue=this.editableTabs[this.activeTabIndex].name;
     }
   },
   methods: {
