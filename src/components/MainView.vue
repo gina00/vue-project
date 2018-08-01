@@ -4,12 +4,13 @@
     type='card'
     editable
     @edit='handleTabsEdit'
+    @tab-click='change'
 >
     <el-tab-pane
         :key='item.name'
-        v-for='(item) in editableTabs'
+        v-for='(item,index) in editableTabs'
         :label='item.title'
-        :name='item.name'
+        :name='index+""'
     >
     <home-page v-if='item.content=="homePage"' :height='item.name'></home-page>
     <total v-if='item.content=="total"'></total>
@@ -34,7 +35,7 @@ export default {
   },
   data () {
     return {
-      editableTabsValue: '首页',
+      editableTabsValue: 0,
       editableTabs: [
         {
           title: '首页',
@@ -61,11 +62,21 @@ export default {
     }
   },
   watch:{
+    // 监听器，如果activeTabIndex值变动就会执行该函数
     activeTabIndex:function(newVal){
-      this.editableTabsValue=this.editableTabs[this.activeTabIndex].name;
+      debugger
+      console.log("左侧被点击了,右侧下标值为editableTabsValue："+this.editableTabsValue)
+      // activeTabIndex变了 你又给activeTabIndex赋值，将会死循环。
+      // activeTabIndex 是外面传进了的，你这个组件使用的是editableTabsValue
+      // 为什么editableTabsValue的初始值是 字符 "0",赋值成数字0 它不认
+      this.editableTabsValue=this.activeTabIndex+"";//当前首页标签下标值给submenu下标
     }
   },
   methods: {
+    change(){
+      console.log("右侧被点击了,触发input时间，当前下标值editableTabsValue："+this.editableTabsValue)
+      this.$emit('input',this.editableTabsValue)
+    },
     handleTabsEdit(targetName, action) {
       if (action === 'add') {
         let newTabName = ++this.tabIndex + ''

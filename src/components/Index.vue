@@ -5,10 +5,10 @@
         </el-header>
         <el-container>
             <el-aside width="auto">
-                <sub-menu @aaaa="s" v-model="indexSelected"></sub-menu>
+                <sub-menu  v-model="indexSelected" :activeSubIndex='mainValue'></sub-menu>
             </el-aside>
             <el-main>
-                <main-view :activeTabIndex="indexSelected"></main-view>
+                <main-view :activeTabIndex="indexSelected" v-model="mainValue"></main-view>
             </el-main>
         </el-container>
     </el-container>

@@ -45,6 +45,15 @@ export default {
             titleClass:true
         }
     },
+    props:{
+        activeSubIndex:0
+    },
+    watch:{
+        activeSubIndex:function(){
+            console.log("右侧被点击了，此时selected："+this.selected)
+            this.selected=this.activeSubIndex
+        }
+    },
     methods: {
         handleOpen(key, keyPath) {
             console.log(key, keyPath)
@@ -62,7 +71,9 @@ export default {
             }
         },
         change(index) {
+            debugger
             this.selected = index;
+            console.log("左侧被点击了,触发input时间，当前下标值selected："+this.selected)
             this.$emit('input', index)
         },
         getInfor(){
