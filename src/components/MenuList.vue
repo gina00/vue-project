@@ -143,7 +143,7 @@ li {
 
 .item-ul li.disable a:hover {
     color: #999;
-    cursor: auto;
+    cursor: not-allowed;
 }
 
 i[class^='fa'] {

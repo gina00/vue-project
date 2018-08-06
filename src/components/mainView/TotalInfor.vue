@@ -8,30 +8,30 @@
                         <div class="payBox">
                             <a class='fa fa-usd iconBox balance'></a>
                             <div class="showtext">
-                                <p>我的余额 ( 元 )</p>
-                                <p class="color-blue">70.32</p>
+                                <p>{{balance}}</p>
+                                <p class="color-blue">{{balanceVal}}</p>
                             </div>
                         </div>
                         <div class="payBox">
                             <a class='fa fa-bolt iconBox arrearage'></a>
                             <div class="showtext">
-                                <p>我的欠费 ( 元 )</p>
-                                <p class="color-pink">0.00</p>
+                                <p>{{overdue}}</p>
+                                <p class="color-pink">{{overdueVal}}</p>
                             </div>
                         </div>
                     </el-col>
                     <el-col :span="12" class="showPayInfo">
                         <p>
-                            <span>本月通用余额：</span>
-                            <span class="color-blue">70.32</span>
+                            <span>{{balanceMonCom}}</span>
+                            <span class="color-blue">{{balanceMonComVal}}</span>
                         </p>
                         <p>
-                            <span>本月专款可用余额：</span>
-                            <span class="color-pink">0.00</span>
+                            <span>{{balanceMonCan}}</span>
+                            <span class="color-pink">{{balanceMonCanVal}}</span>
                         </p>
                         <p>
-                            <span>未返还余额：</span>
-                            <span class="color-pink">0.00</span>
+                            <span>{{noreturnBalance}}</span>
+                            <span class="color-pink">{{noreturnBalanceVal}}</span>
                         </p>
                     </el-col>
                 </el-row>
@@ -88,7 +88,16 @@ export default {
             referralServices: '推荐业务',
             productInfor: '产品信息',
             marketingInfor: '营销信息',
-
+            balance:"我的余额 ( 元 )",
+            balanceVal:'70.32',
+            overdue:'我的欠费( 元 )',
+            overdueVal:'0.00',
+            balanceMonCom:'本月通用余额：',
+            balanceMonComVal:'70.32',
+            balanceMonCan:'本月专款可用余额：',
+            balanceMonCanVal:'0.00',
+            noreturnBalance:'未返还余额：',
+            noreturnBalanceVal:'0.00'
         }
     },
     mounted() {
