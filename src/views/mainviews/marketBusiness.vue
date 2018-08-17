@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import areaLine from '../echartView/areaLine.vue'
-import pie from '../echartView/pieView.vue'
-import barStack from '../echartView/barStack.vue'
-import lineAqi from '../echartView/lineAqi.vue'
-import barAnimation from '../echartView/barAnimation.vue'
-import radar from '../echartView/radar.vue'
+import areaLine from '@/components/echartView/areaLine.vue'
+import pie from '@/components/echartView/pieView.vue'
+import barStack from '@/components/echartView/barStack.vue'
+import lineAqi from '@/components/echartView/lineAqi.vue'
+import barAnimation from '@/components/echartView/barAnimation.vue'
+import radar from '@/components/echartView/radar.vue'
 export default {
     components: {
         'area-line':areaLine,

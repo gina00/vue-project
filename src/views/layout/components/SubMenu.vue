@@ -50,7 +50,7 @@ export default {
     },
     watch:{
         activeSubIndex:function(){
-            console.log("右侧被点击了，此时selected："+this.selected)
+            console.log("右侧被点击了，此时对应左侧下标selected："+this.selected)
             this.selected=this.activeSubIndex
         }
     },

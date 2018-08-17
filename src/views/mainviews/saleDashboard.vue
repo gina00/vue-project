@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import saleUsers from '../echartView/saleUsers';
+import saleUsers from '@/components/echartView/saleUsers';
 export default {
     components: {
         'sale-users': saleUsers

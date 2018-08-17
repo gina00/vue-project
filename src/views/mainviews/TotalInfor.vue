@@ -73,8 +73,8 @@
 
 <script>
 //import list from '../../data/hotBusiness.json'
-import mkinforData from '../table-components/marketInforTable.vue'
-import pdinforData from '../table-components/prodInforTable.vue'
+import mkinforData from '@/components/table-components/marketInforTable.vue'
+import pdinforData from '@/components/table-components/prodInforTable.vue'
 export default {
     components: {
         name: 'totalinfor',

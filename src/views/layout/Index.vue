@@ -1,42 +1,42 @@
 <template>
+<el-container>
+    <el-header>
+        <app-header></app-header>
+    </el-header>
     <el-container>
-        <el-header>
-            <app-header></app-header>
-        </el-header>
-        <el-container>
-            <el-aside width="auto">
-                <sub-menu  v-model="indexSelected" :activeSubIndex='mainValue'></sub-menu>
-            </el-aside>
-            <el-main>
-                <main-view :activeTabIndex="indexSelected" v-model="mainValue"></main-view>
-            </el-main>
-        </el-container>
+        <el-aside width="auto">
+            <sub-menu v-model="indexSelected" :activeSubIndex='mainValue'></sub-menu>
+        </el-aside>
+        <el-main>
+            <main-view :activeTabIndex="indexSelected" v-model="mainValue"></main-view>
+        </el-main>
     </el-container>
+</el-container>
 </template>
 
 <script>
-import AppHeader from '@/components/commonView/Header.vue'
-import SubMenu from '@/components/commonView/SubMenu.vue'
-import MainView from '@/components/MainView.vue'
+import AppHeader from "./components/Header.vue";
+import SubMenu from "./components/SubMenu.vue";
+import MainView from "./components/MainView.vue";
 export default {
     data() {
         return {
-            indexSelected:null,
-            mainValue:null
+            indexSelected: null,
+            mainValue: null
+        };
+    },
+    methods: {
+        s(input) {
+            console.log(input);
         }
     },
-    methods:{
-        s(input){
-        console.log(input);
-        }
-    },
-    name: 'Home',
+    name: "Home",
     components: {
         AppHeader,
         SubMenu,
         MainView
     }
-}
+};
 </script>
 
 <style>

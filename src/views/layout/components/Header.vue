@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import MenuList from '../MenuList.vue'
+import MenuList from '@/components/menulist/MenuList.vue'
 export default {
     name: 'Headers',
     components: {
