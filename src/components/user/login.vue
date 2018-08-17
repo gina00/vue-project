@@ -26,7 +26,15 @@
                     <div class="login-ipt">
                         <el-input class="fa fa-user-o" placeholder="用户名" v-model="username" clearable></el-input>
                         <el-input class="fa fa-expeditedssl" type="password" placeholder="密码" v-model="password" clearable></el-input>
-                        <el-input class="fa fa-envelope-o" placeholder="短信验证码" v-model="input" clearable></el-input>
+                        <el-row class="el-input el-input--suffix">
+                            <el-col :span="16">
+                                <el-input class="fa fa-envelope-o" placeholder="请输入验证码" v-model="picLyanzhengma" @on-blur="checkLpicma" clearable></el-input>
+                            </el-col>
+                            <el-col :span="8">
+                                <el-button class="yzmBtn" id="code" @click="createCode()">{{checkCode}}</el-button>
+                            </el-col>
+                        </el-row>
+
                         <span v-if="isshow" class="tipText">用户名或密码错误</span>
                         <el-button type="primary" @click="getInfor()">登录</el-button>
                         <div class="regitBox">
@@ -56,42 +64,65 @@ export default {
     name: "login",
     data() {
         return {
-            input: '',
-            message: '',
-            username:'',
-            password:'',
-            systemCn:'中国移动客户关系管理系统',
-            systemEn:'China Mobile Customer Relationship Management System',
-            isshow:false
-        }
+            input: "",
+            message: "",
+            username: "",
+            password: "",
+            systemCn: "中国移动客户关系管理系统",
+            systemEn: "China Mobile Customer Relationship Management System",
+            isshow: false,
+            checkCode: "点击获取",
+            picLyanzhengma: ""
+        };
     },
     methods: {
         open() {
-            this.$alert('这是一段内容', '标题名称', {
-                confirmButtonText: '确定',
+            this.$alert("这是一段内容", "标题名称", {
+                confirmButtonText: "确定",
                 callback: action => {
                     this.$message({
-                        type: 'info',
-                        message: 'action: ${ action }'
+                        type: "info",
+                        message: "action: ${ action }"
                     });
                 }
             });
         },
         getInfor() {
-            this.$axios.post('/api/testUser', {
+            this.$axios
+                .post("/api/testUser", {
                     username: this.username,
-                    password: this.password
+                    password: this.password,
+                    picLyanzhengma:this.picLyanzhengma
                 })
                 .then(response => {
-                    this.$router.push({ path: '/index' })
+                    this.$router.push({
+                        path: "/index"
+                    });
                 })
                 .catch(response => {
-                   this.isshow=true
-                })
+                    this.isshow = true;
+                });
+        },
+        createCode() {
+            this.$axios.get("/api/user/checkCode").then(response => {
+                this.checkCode = response.data;
+            });
+        },
+        // 验证所输入验证码是否一致，不区分大小写
+        checkLpicma() {
+            this.picLyanzhengma.toUpperCase(); //取得输入的验证码并转化为大写
+            if (this.picLyanzhengma == "") {
+                this.$Message.info("请输入验证码");
+            } else if (this.picLyanzhengma.toUpperCase() != this.checkCode) {
+                this.$Message.info("验证码输入错误");
+                this.createCode(); //刷新验证码
+                this.picLyanzhengma = "";
+            } else {
+                //输入正确时
+            }
         }
-
     }
-}
+};
 </script>
 
 <style scoped>
@@ -163,7 +194,7 @@ export default {
     font-size: 14px;
 }
 
-*[class^='fa'] {
+*[class^="fa"] {
     color: #c1c1c1;
 }
 
@@ -171,9 +202,11 @@ export default {
     position: relative;
     margin-top: 20px;
 }
-.el-input.el-input--suffix:first-child{
+
+.el-input.el-input--suffix:first-child {
     margin-top: 0px;
 }
+
 .el-input.el-input--suffix:before {
     position: absolute;
     top: 12px;
@@ -200,8 +233,14 @@ export default {
     text-align: center;
     margin-top: 100px;
 }
-.tipText{
+
+.tipText {
     font-size: 12px;
     color: #ef1616;
+}
+
+.login-ipt .el-button.yzmBtn {
+    margin: 0;
+    background: transparent;
 }
 </style>

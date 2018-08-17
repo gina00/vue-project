@@ -4,8 +4,8 @@
         <div slot="header" class="clearfix">
             <span>用户统计</span>
         </div>
-        <div  class="text item">
-           <sale-users></sale-users>
+        <div class="text item">
+            <sale-users></sale-users>
         </div>
     </el-card>
     <el-card class="box-card" shadow="hover">
@@ -17,20 +17,27 @@
             {{'列表内容 ' + o }}
         </div>
     </el-card>
+    <div>
+        <a href="javascript:;" @click="show = true">点击</a>
+        <t-dialog :show.sync="show"></t-dialog>
+    </div>
 </section>
 </template>
 
 <script>
 import saleUsers from '../echartView/saleUsers';
 export default {
-    components:{
-        'sale-users':saleUsers
+    components: {
+        'sale-users': saleUsers
     },
-    data(){
-        return{
+    data() {
+        return {
 
         }
-    }
+    },
+    methods: {
+
+    },
 };
 </script>
 
@@ -66,5 +73,4 @@ export default {
 .clearfix:after {
     clear: both
 }
-
 </style>
