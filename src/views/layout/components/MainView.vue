@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import homePage from "@/views/mainviews/HomeView.vue";
-import total from "@/views/mainviews/TotalMenu.vue";
-import salePanel from "@/views/mainviews/saleDashboard.vue";
+import homePage from "@/views/appmain/tablayout/HomeView.vue";
+import total from "@/views/appmain/tablayout/totallayout/TotalMenu.vue";
+import salePanel from "@/views/appmain/tablayout/saleDashboard.vue";
 export default {
   name: "content-page",
   components: {

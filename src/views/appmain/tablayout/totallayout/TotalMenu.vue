@@ -19,7 +19,7 @@
 
 <script>
 import totalData from './TotalInfor.vue'
-import marketBusiness from './marketBusiness.vue'
+import marketBusiness from '../marketBusiness.vue'
 export default {
     components: {
         'total-infor': totalData,

@@ -1,12 +1,7 @@
 <template>
 <section class="body">
     <el-card class="box-card" shadow="hover">
-        <div slot="header" class="clearfix">
-            <span>用户统计</span>
-        </div>
-        <div class="text item">
-            <sale-users></sale-users>
-        </div>
+        <user-statistic></user-statistic>
     </el-card>
     <el-card class="box-card" shadow="hover">
         <div slot="header" class="clearfix">
@@ -17,35 +12,30 @@
             {{'列表内容 ' + o }}
         </div>
     </el-card>
-    <div>
-        <a href="javascript:;" @click="show = true">点击</a>
+    <div class="scss">
+        <a href="javascript:;" @click="$store.state.show = true">点击</a>
         <t-dialog :show.sync="show"></t-dialog>
     </div>
 </section>
 </template>
 
 <script>
-import saleUsers from '@/components/echartView/saleUsers';
+import userStatistic from '../components/userStatistic.vue';
+import dialog from '@/components/vuex/dialog.vue';
 export default {
     components: {
-        'sale-users': saleUsers
+        'user-statistic': userStatistic,
+        't-dialog': dialog
     },
     data() {
         return {
-
+           
         }
-    },
-    methods: {
-
-    },
+    }
 };
 </script>
 
 <style scoped>
-.text {
-    font-size: 14px;
-}
-
 .box-card {
     width: calc((100% - 30px) / 2);
     display: inline-block;
@@ -58,19 +48,5 @@ export default {
 
 .body .box-card:last-child {
     margin-right: 0px;
-}
-
-.item {
-    margin-bottom: 18px;
-}
-
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    content: "";
-}
-
-.clearfix:after {
-    clear: both
 }
 </style>
