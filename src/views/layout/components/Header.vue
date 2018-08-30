@@ -57,56 +57,49 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .logoBox {
     display: inline-block;
     padding: 10px 0;
-}
-
-.logoBox img {
-    height: 32px;
-}
-
-.logoBox span {
-    display: inline-block;
-}
-
-.logoBox span.andLogo {
-    width: 62px;
-    border-right: 1px solid #fff;
-    margin-right: 10px;
-}
-
-.logoBox span.moveLogo {
-    width: 103px;
+    img {
+        height: 32px;
+    }
+    span {
+        display: inline-block;
+        &.andLogo {
+            width: 62px;
+            border-right: 1px solid #fff;
+            margin-right: 10px;
+        }
+        &.moveLogo {
+            width: 103px;
+        }
+    }
 }
 
 .menuIcon {
     width: 24px;
     height: 24px;
     margin-bottom: 3px;
-}
-
-.menuIcon:hover {
-    cursor: pointer;
-}
-
-.el-menu--horizontal>.el-submenu {
-    float: none;
-    display: inline-block;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .el-menu {
     background: transparent;
 }
 
-.el-menu--horizontal>.el-submenu .el-submenu__title {
-    height: auto;
-    line-height: 20px;
-}
-
 .el-menu--horizontal {
     border-bottom: none;
+    &>.el-submenu {
+        float: none;
+        display: inline-block;
+        .el-submenu__title {
+            height: auto;
+            line-height: 20px;
+        }
+    }
 }
 
 .el-dropdown {
@@ -153,24 +146,21 @@ span[class^="fa"] {
     font-size: 20px;
     color: #fff;
     margin-right: 100px;
-}
-
-.pay .fa-television {
-    font-size: 28px;
+    .fa-television {
+        font-size: 28px;
+    }
 }
 
 .operation {
     font-size: 12px;
     color: #fff;
-}
-
-.operation span {
-    margin-right: 10px;
-}
-
-.operation span:hover {
-    color: #e03864;
-    cursor: pointer;
+    span {
+        margin-right: 10px;
+        &:hover {
+            color: #e03864;
+            cursor: pointer;
+        }
+    }
 }
 
 .el-icon-setting {

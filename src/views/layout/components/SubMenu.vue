@@ -39,19 +39,19 @@ export default {
                 'fa-id-card-o',
                 'fa-volume-up'
             ],
-            Width:231+'px',
-            activeWidth:'auto',
-            userData:[],
-            titleClass:true
+            Width: 231 + 'px',
+            activeWidth: 'auto',
+            userData: [],
+            titleClass: true
         }
     },
-    props:{
-        activeSubIndex:0
+    props: {
+        activeSubIndex: 0
     },
-    watch:{
-        activeSubIndex:function(){
-            console.log("右侧被点击了，此时对应左侧下标selected："+this.selected)
-            this.selected=this.activeSubIndex
+    watch: {
+        activeSubIndex: function () {
+            console.log("右侧被点击了，此时对应左侧下标selected：" + this.selected)
+            this.selected = this.activeSubIndex
         }
     },
     methods: {
@@ -63,27 +63,26 @@ export default {
         },
         toggle() {
             this.isshow = !this.isshow
-            if(!this.isshow){
-               this.Width=this.activeWidth
-            }
-            else{
-                this.Width=231+'px'
+            if (!this.isshow) {
+                this.Width = this.activeWidth
+            } else {
+                this.Width = 231 + 'px'
             }
         },
         change(index) {
             debugger
             this.selected = index;
-            console.log("左侧被点击了,触发input时间，当前下标值selected："+this.selected)
+            console.log("左侧被点击了,触发input时间，当前下标值selected：" + this.selected)
             this.$emit('input', index)
         },
-        getInfor(){
-            this.$axios.get('/api/user/infors').then((response)=>{
-                this.userData=response.data
+        getInfor() {
+            this.$axios.get('/api/user/infors').then((response) => {
+                this.userData = response.data
                 console.log(this.userData)
             })
         }
     },
-    mounted(){
+    mounted() {
         this.getInfor()
     },
     computed: {
@@ -96,21 +95,9 @@ export default {
 }
 </script>
 
-<style scoped>
-ul,
-li,
-p {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
+<style lang="scss" scoped>
 .el-aside {
     width: auto;
-}
-
-.aside-menu ul li a.toggle-o {
-    color: #00ccff;
 }
 
 .el-menu-vertical-demo:not(.el-menu--collapse) {
@@ -124,6 +111,31 @@ p {
 .aside-menu {
     height: 100%;
     position: relative;
+    ul {
+        li {
+            padding: 12px 0;
+            margin-bottom: 5px;
+            &.active {
+                color: #00ccff;
+                background: #00456b;
+                border-left: 3px solid #00ccff;
+                a{
+                    color: #00ccff;
+                }
+            }
+            a {
+                color: #fff;
+                font-size: 20px;
+                &.toggle-o {
+                    color: #00ccff;
+                }
+                &:hover {
+                    color: #00ccff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
 
 .aside-menu-ul {
@@ -131,31 +143,6 @@ p {
     height: 100%;
     background: #00253e;
     float: left;
-}
-
-.aside-menu ul li {
-    padding: 12px 0;
-    margin-bottom: 5px;
-}
-
-.aside-menu ul li a {
-    color: #fff;
-    font-size: 20px;
-}
-
-.aside-menu ul li a:hover {
-    color: #00ccff;
-    cursor: pointer;
-}
-
-.aside-menu ul li.active {
-    color: #00ccff;
-    background: #00456b;
-    border-left: 3px solid #00ccff;
-}
-
-.aside-menu ul li.active a {
-    color: #00ccff;
 }
 
 .userinfo {
@@ -174,11 +161,10 @@ p {
     padding-bottom: 5px;
     color: #019ae5;
     position: relative;
-}
-
-.title i {
-    position: absolute;
+    i{
+         position: absolute;
     right: 0px;
+    }
 }
 
 .el-input {

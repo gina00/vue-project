@@ -114,11 +114,6 @@ export default {
 </script>
 
 <style scoped>
-P {
-    padding: 0;
-    margin: 0;
-}
-
 .content {
     padding: 0;
 }

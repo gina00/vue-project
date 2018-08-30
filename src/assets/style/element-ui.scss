@@ -1,0 +1,106 @@
+/*覆盖原有的element样式*/
+
+
+/*========================layout css==============================*/
+
+.el-header {
+    height: auto !important;
+}
+
+.el-header,
+.el-footer {
+    background-color: #019ae5;
+    color: #333;
+}
+
+.el-aside {
+    /* width: calc(100%); */
+    background-color: #d3dce6;
+    color: #333;
+    text-align: center;
+}
+
+.el-main {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: left;
+    padding: 0px;
+}
+
+body>.el-container {
+    margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+
+/*========================homeview css==============================*/
+
+.el-input__inner {
+    border-radius: 0px;
+}
+
+.el-tabs--card>.el-tabs__header {
+    background: #00253e !important;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__nav>.el-tabs__item {
+    color: #666;
+    background: #d7d7d7;
+    margin-right: 5px;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__nav>.el-tabs__item .el-tabs__header {
+    color: #666;
+    background: transparent;
+    margin-right: 5px;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__nav {
+    border-radius: 0px;
+    border: none;
+    margin-left: 10px;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active.is-closable {
+    background: #f2f2f2;
+    color: #0cf;
+}
+
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+    border-bottom-color: transparent;
+}
+
+.el-tabs__new-tab {
+    margin-right: 10px;
+}
+
+.el-tabs__header {
+    margin: 0px;
+}
+
+.el-tabs__content {
+    overflow: inherit;
+}
+
+.el-input {
+    width: auto
+}
+
+.el-button {
+    border-radius: 0px;
+}
+
+.choiceBox .el-button {
+    margin-top: 10px;
+}
+
+
+/*========================homeview css==============================*/

@@ -1,0 +1,24 @@
+@import './element-ui.scss';
+@import './scrollbar.scss';
+@import './login-ui.scss';
+@import './menu-ui.scss';
+@import './transition.scss';
+
+/*========================base css==============================*/
+
+body {
+    margin: 0px;
+    font-family: PingFangSC-Semibold, "Microsoft YaHei", Arial, sans-serif, Helvetica, STHeiti
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}

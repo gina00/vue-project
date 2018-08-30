@@ -10,9 +10,11 @@ import VueResource from 'vue-resource'
 import ECharts from 'vue-echarts'
 import 'font-awesome/css/font-awesome.css'
 import axios from "axios"
+import store from './store' //引入vuex文件
+import './assets/style/index.scss' // global css
 
 // 此处引入静态资源
-require('../static/css/style.css')
+//require('../static/css/style.css')
 Vue.use(ElementUI)
 Vue.use(ElementUI, { locale })
 Vue.config.productionTip = false
@@ -29,10 +31,16 @@ Vue.filter('getYMD', function(input) {
         return input.split(' ')[0];
     })
     /* eslint-disable no-new */
+    // var store = new vuex.Store({ //store对象
+    //     state: {
+    //         show: false
+    //     }
+    // })
 new Vue({
     el: '#app2',
     render: h => h(App),
     router,
+    store, //store对象，使用store
     components: { App },
     template: '<App/>'
 })
