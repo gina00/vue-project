@@ -37,7 +37,7 @@ export default {
                     children: []
                 }]
             }],
-            input:'',
+            input: '',
             //当前标签页菜单数据
             menuData: [],
             selected: 0, // 初始化第一个栏块高亮
@@ -64,7 +64,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .el-popper[x-placement^='bottom'] {
     margin-top: 10px;
 }
@@ -73,28 +73,24 @@ export default {
     height: 50px;
     padding-left: 10px;
     border-bottom: 1px solid #e30077;
-}
-
-.menuList li {
-    float: left;
-    box-sizing: border-box;
-}
-
-.menuList li a {
-    padding: 14px;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 14px;
-    color: #333;
-}
-
-.menuList li a:hover {
-    color: #e30077;
-}
-
-.menuList li.active {
-    color: #e30077;
-    border-bottom: 3px solid #e30077;
+    li {
+        float: left;
+        box-sizing: border-box;
+        &.active {
+            color: #e30077;
+            border-bottom: 3px solid #e30077;
+        }
+        a {
+            padding: 14px;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+            color: #333;
+            &:hover {
+                color: #e30077;
+            }
+        }
+    }
 }
 
 .childList {
@@ -103,16 +99,19 @@ export default {
     float: left;
 }
 
-.parent-ul>li {
-    float: left;
-    margin: 0 10px;
-}
-
-.parent-ul li .title {
-    padding: 10px 0px;
-    border-bottom: 1px solid #e30077;
-    margin-bottom: 10px;
-    box-shadow: 0px 1px #e87ebb;
+.parent-ul {
+    &>li {
+        float: left;
+        margin: 0 10px;
+    }
+    li {
+        .title {
+            padding: 10px 0px;
+            border-bottom: 1px solid #e30077;
+            margin-bottom: 10px;
+            box-shadow: 0px 1px #e87ebb;
+        }
+    }
 }
 
 .titleText {
@@ -120,23 +119,29 @@ export default {
     padding: 10px 20px 10px 10px;
 }
 
-.item-ul li {
-    font-size: 12px;
-    margin: 8px 0px;
-}
-
-.item-ul li a:hover {
-    color: #e30077;
-    cursor: pointer;
+.item-ul {
+    li {
+        font-size: 12px;
+        margin: 8px 0px;
+        a {
+            &:hover {
+                color: #e30077;
+                cursor: pointer;
+            }
+        }
+        &.disable {
+            a {
+                &:hover {
+                    color: #999;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
 }
 
 .disable {
     color: #999999;
-}
-
-.item-ul li.disable a:hover {
-    color: #999;
-    cursor: not-allowed;
 }
 
 i[class^='fa'] {

@@ -1,6 +1,39 @@
-# vue-project
+##项目说明
+IBOP系统的开发主要是供中国移动客服人员使用，其中包含了登录模块、用户信息、产品菜单、综合信息、个人资料、产品信息、营销业务、套餐情况、我的账户、家宽信息等功能 。服务端主要作用在于模拟数据交互，针对客户端对数据的请求和处理作出响应。现对旧版系统做翻新修改，原有项目存在的问题：UI元素不统一（页面间距、文字，图标元素大小不统一），业务功能划分不细致，不够迎合潮流风格（比较老成），运行环境有限（ie8浏览器），现针对项目存在的问题做了相应修改。
+但因客户对视觉效果的整改需求不高，迟迟未有重构进展，因此只有部分排版，功能尚不完善。
 
-> A Vue.js project
+##前端技术
+1. vue
+2. element
+3. Webpack
+4. Express
+
+##开发工具
+VScode，Git
+
+##界面测试
+IE9及以上、Chrome浏览器
+
+##开发环境依赖
+node v0.10.28+
+
+##部署步骤
+1.  npm install 安装项目依赖包
+2.  node server/app 启动express 后台登录验证
+3.   npm run dev 运行项目，端口8080
+4.  用户名：admin 密码：abcd1234 
+
+##项目前端效果：
+
+登录页：
+![image](http://github.com/gina00/readme_add_pic/raw/master/images/nongshalie.jpg)
+
+首页：
+![image](http://github.com/itmyhome2013/readme_add_pic/raw/master/images/nongshalie.jpg)
+
+综合信息页：
+![image](http://github.com/itmyhome2013/readme_add_pic/raw/master/images/nongshalie.jpg)
+
 
 ## Build Setup
 

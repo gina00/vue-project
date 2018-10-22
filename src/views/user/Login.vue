@@ -91,8 +91,7 @@ export default {
             this.$axios
                 .post("/api/testUser", {
                     username: this.username,
-                    password: this.password,
-                    picLyanzhengma:this.picLyanzhengma
+                    password: this.password
                 })
                 .then(response => {
                     this.$router.push({
@@ -107,25 +106,12 @@ export default {
             this.$axios.get("/api/user/checkCode").then(response => {
                 this.checkCode = response.data;
             });
-        },
-        // 验证所输入验证码是否一致，不区分大小写
-        checkLpicma() {
-            this.picLyanzhengma.toUpperCase(); //取得输入的验证码并转化为大写
-            if (this.picLyanzhengma == "") {
-                this.$Message.info("请输入验证码");
-            } else if (this.picLyanzhengma.toUpperCase() != this.checkCode) {
-                this.$Message.info("验证码输入错误");
-                this.createCode(); //刷新验证码
-                this.picLyanzhengma = "";
-            } else {
-                //输入正确时
-            }
         }
     }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main-bg {
     background: #019ae5;
     padding: 40px 200px;
@@ -141,24 +127,20 @@ export default {
 
 .logoBox {
     padding: 10px 0;
-}
-
-.logoBox img {
-    height: 32px;
-}
-
-.logoBox span {
-    display: inline-block;
-}
-
-.logoBox span.andLogo {
-    width: 62px;
-    border-right: 1px solid #fff;
-    margin-right: 10px;
-}
-
-.logoBox span.moveLogo {
-    width: 103px;
+    img {
+        height: 32px;
+    }
+    span {
+        display: inline-block;
+        &.andLogo {
+            width: 62px;
+            border-right: 1px solid #fff;
+            margin-right: 10px;
+        }
+        &.moveLogo {
+            width: 103px;
+        }
+    }
 }
 
 .mainItem {
@@ -167,23 +149,22 @@ export default {
 
 .mainItem-l-top {
     color: #fff;
-}
-
-.mainItem-l-top p:first-child {
-    font-size: 36px;
-}
-
-.mainItem-l-top p:last-child {
-    font-size: 12px;
+    p {
+        &:first-child {
+            font-size: 36px;
+        }
+        &:last-child {
+            font-size: 12px;
+        }
+    }
 }
 
 .mainItem-l-bottom {
     margin-top: 70px;
-}
-
-.mainItem-l-bottom img {
-    width: 380px;
-    height: 290px;
+    img {
+        width: 380px;
+        height: 290px;
+    }
 }
 
 .login-ipt {
@@ -192,6 +173,12 @@ export default {
     padding: 20px;
     background: #ffffff;
     font-size: 14px;
+    .el-button {
+        &.yzmBtn {
+            margin: 0;
+            background: transparent;
+        }
+    }
 }
 
 *[class^="fa"] {
@@ -237,10 +224,5 @@ export default {
 .tipText {
     font-size: 12px;
     color: #ef1616;
-}
-
-.login-ipt .el-button.yzmBtn {
-    margin: 0;
-    background: transparent;
 }
 </style>
